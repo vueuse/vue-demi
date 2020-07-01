@@ -1,20 +1,19 @@
 <p align="center">
-<img src="./assets/logo.png" width="200"/>
+<br>
+<img src="./assets/banner.png" width="500"/>
+<br>
+<br>
+<a href='https://www.npmjs.com/package/vue-demi'><img src='https://img.shields.io/npm/v/vue-demi?color=42b883' alt='npm'></a>
 </p>
-
-<h1 align="center">Vue Demi</h1>
-
-<h4 align="center">
-
-[![npm](https://img.shields.io/npm/v/vue-demi)](https://www.npmjs.com/package/vue-demi)
-
-</h4>
 
 <p align="center">
-<b>Vue Demi</b> (<i>half</i> in French) is a developing utility that allows you to write <b>Universal Vue Plugins</b> for Vue 2 and 3. See more details in <a href='https://antfu.me/posts/make-libraries-working-with-vue-2-and-3'>this blog post</a>.
+<b>Vue Demi</b> (<i>half</i> in French) is a developing utility<br> allows you to write <b>Universal Vue Plugins</b> for Vue 2 and 3<br>
+<i>See more details in <a href='https://antfu.me/posts/make-libraries-working-with-vue-2-and-3'>this blog post</a></i>
 </p>
 
-> 🚧 Expiremental
+<pre align="center">
+🚧 It's experimental, yet.
+</pre>
 
 ## Usage
 
@@ -44,7 +43,11 @@ Then publish your plugin and all is done!
 
 ## Examples
 
-See [examples](./examples)
+See [examples](./examples).
+
+## Underhood
+
+See [the blog post](https://antfu.me/posts/make-libraries-working-with-vue-2-and-3/#-introducing-vue-demi).
 
 ## License
 
