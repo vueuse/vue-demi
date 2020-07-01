@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./assets/logo.png" width="200"/>
+</p>
+
 <h1 align="center">Vue Demi</h1>
 
 <h4 align="center">
@@ -6,13 +10,21 @@
 
 </h4>
 
-`Vue Demi` ("half" in French) is a plugin development utility that allows you to write Vue plugins for Vue 2 and 3 without worry about users' installed version. See more details in [this blog](https://antfu.me/posts/make-libraries-working-with-vue-2-and-3).
+<p align="center">
+<b>Vue Demi</b> (<i>half</i> in French) is a developing utility that allows you to write <b>Universal Vue Plugins</b> for Vue 2 and 3. See more details in <a href='https://antfu.me/posts/make-libraries-working-with-vue-2-and-3'>this blog post</a>.
+</p>
 
 > 🚧 Expiremental
 
 ## Usage
 
 Install this as your plugin's dependency:
+
+```bash
+npm i vue-demi
+# or
+yarn add vue-demi
+```
 
 ```json
 {
