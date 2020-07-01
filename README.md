@@ -11,6 +11,8 @@
 <i>See more details in <a href='https://antfu.me/posts/make-libraries-working-with-vue-2-and-3'>this blog post</a></i>
 </p>
 
+<br>
+
 <pre align="center">
 🚧 It's experimental, yet.
 </pre>
