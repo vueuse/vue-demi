@@ -1,0 +1,21 @@
+{
+  "name": "vue-demi",
+  "version": "0.0.1",
+  "main": "lib/index.cjs.js",
+  "type": "lib/index.d.ts",
+  "module": "lib/index.esm.js",
+  "repository": "https://github.com/antfu/vue-demi.git",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "devDependencies": {
+    "@vue/composition-api": "^1.0.0-beta.1",
+    "vue": "^2.6.11"
+  },
+  "files": [
+    "lib",
+    "scripts"
+  ]
+}
