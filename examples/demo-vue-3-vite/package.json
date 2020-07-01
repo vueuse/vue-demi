@@ -1,0 +1,17 @@
+{
+  "name": "demo-vue-3-vite",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vue-demi/use-mouse": "^0.0.1",
+    "vue": "^3.0.0-beta.15"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0-beta.15",
+    "vite": "^1.0.0-beta.3"
+  }
+}

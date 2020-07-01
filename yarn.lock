@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@vue-demi/use-mouse@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@vue-demi/use-mouse/-/use-mouse-0.0.1.tgz#65641a492fa37149c559fd7b1baba20f169144d0"
+  integrity sha512-poz1y0CD3hcJXX571jqgN75zcHdiKI0XiGKdasJ5XbXMKbKGt6ZrRosJW1HKJ2Ufboy/zC+9vARu6i6JTc/YCg==
+  dependencies:
+    vue-demi latest
+
 "@vue/composition-api@^1.0.0-beta.1":
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.0.0-beta.1.tgz#bd5c3fc902f8bd75c3bd9180974572a51a416447"
@@ -13,6 +20,11 @@ tslib@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
   integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+
+vue-demi@latest:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.0.6.tgz#6998b1906cc790514568a7f07728ced5267966cf"
+  integrity sha512-lqAAOvdfwMbUL2qpgF2dtVgvhTbWNmDf3bR7YbfndQUNGy1lRFu+HYO1cGZB8rGxaPxbftATbPaXbP3GeEGhBQ==
 
 vue@^2.6.11:
   version "2.6.11"

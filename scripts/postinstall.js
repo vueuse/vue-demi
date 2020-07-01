@@ -1,12 +1,10 @@
 const { execSync } = require('child_process')
 const fs = require('fs')
 const path = require('path')
-const { Verify } = require('crypto')
 
 const dir = path.resolve(__dirname, '..')
 const agent = (process.env.npm_config_user_agent || 'npm').split('/')[0]
-
-console.log('HELLO')
+const userRoot = path.resolve(dir, '../..')
 
 const AgentCommands = {
   npm: 'npm i',
@@ -26,18 +24,16 @@ function loadModule (name) {
 function installModules (names) {
   const command = AgentCommands[agent] || AgentCommands.npm
   names = Array.isArray(names) ? names : [names]
-  execSync(`${command} ${names.join(' ')}`, { stdio: 'inherit' })
+  execSync(`${command} ${names.join(' ')}`, { stdio: 'inherit', cwd: userRoot })
 }
 
 function switchVersion(version) {
   fs.writeFileSync(path.join(dir,'lib', 'index.cjs.js'), `module.exports = require('./v${version}/index.cjs')\n`, 'utf-8')
-  fs.writeFileSync(path.join(dir,'lib', 'index.esm.js'), `export * from './v${version}'\n`, 'utf-8')
-  fs.writeFileSync(path.join(dir,'lib', 'index.d.ts'), `export * from './v${version}'\n`, 'utf-8')
+  fs.writeFileSync(path.join(dir,'lib', 'index.esm.js'), `export * from './v${version}/index.esm'\n`, 'utf-8')
+  fs.writeFileSync(path.join(dir,'lib', 'index.d.ts'), `export * from './v${version}/index.d.ts'\n`, 'utf-8')
 }
 
 const Vue = loadModule('vue')
-
-console.log(Vue && Vue.version)
 
 if (!Vue || typeof Vue.version !== 'string') {
   console.warn('[Vue-demi] vue is not detected. Please install vue first.')

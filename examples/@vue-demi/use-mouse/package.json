@@ -1,0 +1,23 @@
+{
+  "name": "@vue-demi/use-mouse",
+  "version": "0.0.1",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "vue-demi": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.5",
+    "vue": "^2.6.11"
+  },
+  "scripts": {
+    "build": "npx rimraf dist && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc --module es2015 --outDir dist/esm -d",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
+  },
+  "files": [
+    "dist"
+  ]
+}

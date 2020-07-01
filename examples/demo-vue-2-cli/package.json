@@ -1,0 +1,25 @@
+{
+  "name": "demo-vue-2-cli",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@vue-demi/use-mouse": "^0.0.1",
+    "@vue/composition-api": "^1.0.0-beta.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-typescript": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "typescript": "~3.9.3",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
