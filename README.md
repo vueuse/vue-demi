@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-<b>Vue Demi</b> (<i>half</i> in French) is a developing utility<br> allows you to write <b>Universal Vue Plugins</b> for Vue 2 and 3<br>
+<b>Vue Demi</b> (<i>half</i> in French) is a developing utility<br> allows you to write <b>Universal Vue Libraries</b> for Vue 2 and 3<br>
 <i>See more details in <a href='https://antfu.me/posts/make-libraries-working-with-vue-2-and-3'>this blog post</a></i>
 </p>
 
