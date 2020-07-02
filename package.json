@@ -17,5 +17,8 @@
   "files": [
     "lib",
     "scripts"
-  ]
+  ],
+  "bin":{
+    "vue-demi-fix": "./scripts/postinstall.js"
+  }
 }

@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-<b>Vue Demi</b> (<i>half</i> in French) is a developing utility<br> allows you to write <b>Universal Vue Libraries</b> for Vue 2 and 3<br>
+<b>Vue Demi</b> (<i>half</i> in French) is a developing utility<br> allows you to write <b>Universal Vue Libraries</b> for Vue 2 & 3<br>
 <i>See more details in <a href='https://antfu.me/posts/make-libraries-working-with-vue-2-and-3'>this blog post</a></i>
 </p>
 
@@ -16,6 +16,8 @@
 <pre align="center">
 🚧 It's experimental, yet.
 </pre>
+
+<br>
 
 ## Usage
 
@@ -41,7 +43,7 @@ Import everything related to Vue from it, it will redirect to `vue@2` `@vue/comp
 import { ref, reactive, defineComponent } from 'vue-demi'
 ```
 
-Then publish your plugin and all is done!
+Publish your plugin and all is done!
 
 ## Examples
 
@@ -50,6 +52,17 @@ See [examples](./examples).
 ## Underhood
 
 See [the blog post](https://antfu.me/posts/make-libraries-working-with-vue-2-and-3/#-introducing-vue-demi).
+
+<details>
+<summary>Redirecting Reslove</summary>
+<br>
+If the script doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting. 
+
+```bash
+npx vue-demi-fix
+```
+
+</details>
 
 ## License
 

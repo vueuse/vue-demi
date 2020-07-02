@@ -36,7 +36,7 @@ function switchVersion(version) {
 const Vue = loadModule('vue')
 
 if (!Vue || typeof Vue.version !== 'string') {
-  console.warn('[Vue-demi] vue is not detected. Please install vue first.')
+  console.warn('[vue-demi] Vue is not detected in the dependencies. Please install Vue first.')
 }
 else if (Vue.version.startsWith('2.')) {
   const VCA = loadModule('@vue/composition-api')
@@ -47,4 +47,7 @@ else if (Vue.version.startsWith('2.')) {
 }
 else if (Vue.version.startsWith('3.')) {
   switchVersion(3)
+}
+else {
+  console.warn(`[vue-demi] Vue version v${Vue.version} is not suppported.`)
 }
