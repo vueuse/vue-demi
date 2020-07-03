@@ -9,6 +9,7 @@
     "vue-demi": "latest"
   },
   "devDependencies": {
+    "@vue/composition-api": "^1.0.0-beta.1",
     "typescript": "^3.9.5",
     "vue": "^2.6.11"
   },
