@@ -1,6 +1,6 @@
 {
   "name": "vue-demi",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "lib/index.cjs.js",
   "typings": "lib/index.d.ts",
   "module": "lib/index.esm.js",
@@ -18,7 +18,7 @@
     "lib",
     "scripts"
   ],
-  "bin":{
+  "bin": {
     "vue-demi-fix": "./scripts/postinstall.js"
   }
 }
