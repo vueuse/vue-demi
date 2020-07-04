@@ -4,6 +4,8 @@
   "main": "lib/index.cjs.js",
   "typings": "lib/index.d.ts",
   "module": "lib/index.esm.js",
+  "unpkg": "lib/index.iffe.js",
+  "jsdelivr": "lib/index.iffe.js",
   "repository": "https://github.com/antfu/vue-demi.git",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "license": "MIT",
