@@ -1,1 +1,1 @@
-export * from './v2/index.d.ts'
+export * from './v2/index.d'
