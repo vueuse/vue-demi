@@ -13,10 +13,6 @@
 
 <br>
 
-<pre align="center">
-🚧 It's experimental, yet.
-</pre>
-
 <br>
 
 ## Usage
