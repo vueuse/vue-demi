@@ -9,9 +9,9 @@
     "vue-demi": "latest"
   },
   "devDependencies": {
-    "@vue/composition-api": "^1.0.0-beta.1",
-    "typescript": "^3.9.5",
-    "vue": "^2.6.11"
+    "@vue/composition-api": "^1.0.0-beta.10",
+    "typescript": "^3.9.7",
+    "vue": "^2.6.12"
   },
   "scripts": {
     "build": "npx rimraf dist && npm run build:esm && npm run build:cjs",

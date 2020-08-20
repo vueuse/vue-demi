@@ -8,14 +8,14 @@
   },
   "dependencies": {
     "@vue-demi/use-mouse": "^0.0.1",
-    "@vue/composition-api": "^1.0.0-beta.1",
-    "vue": "^2.6.11"
+    "@vue/composition-api": "^1.0.0-beta.10",
+    "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@vue/cli-plugin-typescript": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
-    "typescript": "~3.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "@vue/cli-plugin-typescript": "~4.4.6",
+    "@vue/cli-service": "~4.4.6",
+    "typescript": "~3.9.7",
+    "vue-template-compiler": "^2.6.12"
   },
   "browserslist": [
     "> 1%",
