@@ -25,10 +25,16 @@ npm i vue-demi
 yarn add vue-demi
 ```
 
+Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to specify what versions you support.
+
 ```json
 {
   "dependencies": {
     "vue-demi": "latest"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-beta.1",
+    "vue": "^2.0.0 || >=3.0.0-rc.0"
   }
 }
 ```

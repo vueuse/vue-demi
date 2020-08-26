@@ -1,6 +1,6 @@
 {
   "name": "vue-demi",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "main": "lib/index.cjs.js",
   "typings": "lib/index.d.ts",
   "module": "lib/index.esm.js",
@@ -13,10 +13,8 @@
     "postinstall": "node ./scripts/postinstall.js"
   },
   "peerDependencies": {
-    "@vue/composition-api": ">=1.0.0-beta.1"
-  },
-  "devDependencies": {
-    "vue": "^2.6.11"
+    "@vue/composition-api": ">=1.0.0-beta.1",
+    "vue": "^2.6.0 || >=3.0.0-rc.1"
   },
   "files": [
     "lib",
