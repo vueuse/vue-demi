@@ -1,6 +1,6 @@
 {
   "name": "vue-demi",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "lib/index.cjs.js",
   "typings": "lib/index.d.ts",
   "module": "lib/index.esm.js",
