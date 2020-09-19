@@ -51,6 +51,14 @@ Publish your plugin and all is done!
 
 See [examples](./examples).
 
+## Who are using this?
+
+- [VueUse](https://github.com/antfu/vueuse) - Collection of Composition API utils
+- [@vue/apollo-composable](https://github.com/vuejs/vue-apollo/tree/v4/packages/vue-apollo-composable) - Apollo GraphQL functions for Vue Composition API
+- [vuelidate](https://github.com/vuelidate/vuelidate) - Simple, lightweight model-based validation
+
+> open a PR to add your library ;)
+
 ## Underhood
 
 See [the blog post](https://antfu.me/posts/make-libraries-working-with-vue-2-and-3/#-introducing-vue-demi).
