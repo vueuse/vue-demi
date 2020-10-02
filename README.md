@@ -47,41 +47,18 @@ import { ref, reactive, defineComponent } from 'vue-demi'
 
 Publish your plugin and all is done!
 
----
+### Extra APIs
 
-Check the Vue version to handle the differences between 2 and 3.
+Vue Demi provides extra APIs `isVue2` `isVue3` to help distinguishing user versions.
 
-```js
-import {h, ref, onMounted, isVue2} from 'vue-demi'
+```ts
+import { isVue2 } from 'vue-demi'
 
-export default {
-  setup(props, {refs}) {
-    const buttonRef = ref(null)
-    const onClick = (() => {
-      // ...
-    })
-    onMounted(() => {
-      const button = isVue2 ? refs.button : buttonRef.value
-      // ...
-    })
-    return (() => {
-      return h('button', {
-        style: {/*...*/},
-        ...(isVue2
-          ? {
-            on: {click: onClick},
-            ref: 'button',
-          }
-          : {
-            onClick,
-            ref: buttonRef,
-          }
-        ),
-      })
-    })
-  }
+if (isVue2) {
+  // vue 2 only logics
+} else {
+  // vue 3 only logics
 }
-```
 
 
 ## Examples
