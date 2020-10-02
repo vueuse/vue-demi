@@ -59,7 +59,7 @@ if (isVue2) {
 } else {
   // vue 3 only logics
 }
-
+```
 
 ## Examples
 
