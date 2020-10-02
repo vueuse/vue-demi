@@ -54,7 +54,7 @@ Check the Vue version to handle the differences between 2 and 3.
 ```js
 import {h, ref, onMounted, isVue2} from 'vue-demi'
 
-export {
+export default {
   setup(props, {refs}) {
     const buttonRef = ref(null)
     const onClick = (() => {
