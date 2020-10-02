@@ -3,7 +3,7 @@
   "version": "0.3.3",
   "main": "lib/index.cjs.js",
   "typings": "lib/index.d.ts",
-  "module": "lib/index.es.js",
+  "module": "lib/index.esm.js",
   "unpkg": "lib/index.iife.js",
   "jsdelivr": "lib/index.iife.js",
   "repository": "https://github.com/antfu/vue-demi.git",
