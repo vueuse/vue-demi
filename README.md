@@ -61,7 +61,7 @@ export default {
       // ...
     })
     onMounted(() => {
-      const button = isVue2 ? ref.button : buttonRef.value
+      const button = isVue2 ? refs.button : buttonRef.value
       // ...
     })
     return (() => {
