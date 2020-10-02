@@ -39,7 +39,7 @@ Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to speci
 }
 ```
 
-Import everything related to Vue from it, it will redirect to `vue@2` `@vue/composition-api` or `vue@next` based on users' environments.
+Import everything related to Vue from it, it will redirect to `vue@2` + `@vue/composition-api` or `vue@3` based on users' environments.
 
 ```ts
 import { ref, reactive, defineComponent } from 'vue-demi'
@@ -49,15 +49,15 @@ Publish your plugin and all is done!
 
 ### Extra APIs
 
-Vue Demi provides extra APIs `isVue2` and `isVue3` to help distinguishing user versions.
+`Vue Demi` provides extra APIs `isVue2` and `isVue3` to help distinguishing users' environments and to do some version specific logics.
 
 ```ts
 import { isVue2 } from 'vue-demi'
 
 if (isVue2) {
-  // vue 2 only logics
+  // Vue 2 only
 } else {
-  // vue 3 only logics
+  // Vue 3 only
 }
 ```
 
