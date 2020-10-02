@@ -1,4 +1,7 @@
 import Vue from 'vue'
+declare const isVue2 = true
 export * from '@vue/composition-api'
-export { Vue }
-export default Vue
+export {
+  Vue,
+  isVue2,
+}
