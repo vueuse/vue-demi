@@ -47,6 +47,43 @@ import { ref, reactive, defineComponent } from 'vue-demi'
 
 Publish your plugin and all is done!
 
+---
+
+Check the Vue version to handle the differences between 2 and 3.
+
+```js
+import {h, ref, onMounted, isVue2} from 'vue-demi'
+
+export {
+  setup(props, {refs}) {
+    const buttonRef = ref(null)
+    const onClick = (() => {
+      // ...
+    })
+    onMounted(() => {
+      const button = isVue2 ? ref.button : buttonRef.value
+      // ...
+    })
+    return (() => {
+      return h('button', {
+        style: {/*...*/},
+        ...(isVue2
+          ? {
+            on: {click: onClick},
+            ref: 'button',
+          }
+          : {
+            onClick,
+            ref: buttonRef,
+          }
+        ),
+      })
+    })
+  }
+}
+```
+
+
 ## Examples
 
 See [examples](./examples).
@@ -66,7 +103,7 @@ See [the blog post](https://antfu.me/posts/make-libraries-working-with-vue-2-and
 <details>
 <summary>Redirecting Reslove</summary>
 <br>
-If the script doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting. 
+If the script doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting.
 
 ```bash
 npx vue-demi-fix
