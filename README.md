@@ -47,6 +47,20 @@ import { ref, reactive, defineComponent } from 'vue-demi'
 
 Publish your plugin and all is done!
 
+### Extra APIs
+
+Vue Demi provides extra APIs `isVue2` and `isVue3` to help distinguishing user versions.
+
+```ts
+import { isVue2 } from 'vue-demi'
+
+if (isVue2) {
+  // vue 2 only logics
+} else {
+  // vue 3 only logics
+}
+```
+
 ## Examples
 
 See [examples](./examples).
@@ -66,7 +80,7 @@ See [the blog post](https://antfu.me/posts/make-libraries-working-with-vue-2-and
 <details>
 <summary>Redirecting Reslove</summary>
 <br>
-If the script doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting. 
+If the script doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting.
 
 ```bash
 npx vue-demi-fix
