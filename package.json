@@ -16,9 +16,6 @@
   "peerDependencies": {
     "vue": "^2.6.0 || >=3.0.0-rc.1"
   },
-  "optionalDependencies": {
-    "@vue/composition-api": ">=1.0.0-beta.1"
-  },
   "files": [
     "lib",
     "scripts"
