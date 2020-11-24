@@ -1,1 +1,1 @@
-export * from './v2/index.d'
+export * from './v3/index.d'
