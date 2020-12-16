@@ -21,6 +21,7 @@
     "scripts"
   ],
   "bin": {
-    "vue-demi-fix": "./scripts/postinstall.js"
+    "vue-demi-fix": "./scripts/postinstall.js",
+    "vue-demi-switch": "./scripts/switch-cli.js"
   }
 }

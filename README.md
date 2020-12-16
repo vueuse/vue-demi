@@ -49,16 +49,45 @@ Publish your plugin and all is done!
 
 ### Extra APIs
 
-`Vue Demi` provides extra APIs `isVue2` and `isVue3` to help distinguishing users' environments and to do some version specific logics.
+`Vue Demi` provides extra APIs to help distinguishing users' environments and to do some version-specific logics.
+
+### `isVue2` `isVue3`
 
 ```ts
-import { isVue2 } from 'vue-demi'
+import { isVue2, isVue3 } from 'vue-demi'
 
 if (isVue2) {
   // Vue 2 only
 } else {
   // Vue 3 only
 }
+```
+
+### `install()`
+
+Composition API in Vue 2 is provided as a plugin and need to install to Vue instance before using. Normally, `vue-demi` will try to install it automatically. For some usages that you might need to ensure the plugin get installed correctly, the `install()` API is exposed to as a safe version of `Vue.use(CompositionAPI)`. `install()` in Vue 3 environment will be an empty function (no-op).
+
+```ts
+import Vue from 'vue'
+import { install } from 'vue-demi'
+
+install(Vue)
+```
+
+### CLI
+
+To explicitly switch the redirecting version, you can use these commands in your project's root.
+
+```bash
+npx vue-demi-switch 2
+# or
+npx vue-demi-switch 3
+```
+
+If the `postinstall` hook doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting.
+
+```bash
+npx vue-demi-fix
 ```
 
 ## Examples
@@ -77,17 +106,6 @@ See [examples](./examples).
 ## Underhood
 
 See [the blog post](https://antfu.me/posts/make-libraries-working-with-vue-2-and-3/#-introducing-vue-demi).
-
-<details>
-<summary>Redirecting Reslove</summary>
-<br>
-If the script doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting.
-
-```bash
-npx vue-demi-fix
-```
-
-</details>
 
 ## License
 
