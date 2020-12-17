@@ -1,10 +1,19 @@
 const fs = require('fs')
 const path = require('path')
 
-const dir = path.resolve(__dirname, '..')
+const dir = path.resolve(__dirname, '..', 'lib')
 
-module.exports = function switchVersion(version) {
-  fs.writeFileSync(path.join(dir, 'lib', 'index.cjs.js'), `module.exports = require('./v${version}/index.cjs')\n`, 'utf-8')
-  fs.writeFileSync(path.join(dir, 'lib', 'index.esm.js'), `export * from './v${version}/index.esm'\n`, 'utf-8')
-  fs.writeFileSync(path.join(dir, 'lib', 'index.d.ts'), `export * from './v${version}/index'\n`, 'utf-8')
+function copy(name, version, vue) {
+  vue = vue || 'vue'
+  const src = path.join(dir, `v${version}`, name)
+  const dest = path.join(dir, name)
+  let content = fs.readFileSync(src, 'utf-8')
+  content = content.replace(/'vue'/g, `'${vue}'`)
+  fs.writeFileSync(dest, content, 'utf-8')
+}
+
+module.exports = function switchVersion(version, vue) {
+  copy('index.cjs.js', version, vue)
+  copy('index.esm.js', version, vue)
+  copy('index.d.ts', version, vue)
 }

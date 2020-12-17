@@ -74,7 +74,9 @@ import { install } from 'vue-demi'
 install(Vue)
 ```
 
-### CLI
+## CLI
+
+### Manually Switch Versions
 
 To explicitly switch the redirecting version, you can use these commands in your project's root.
 
@@ -83,6 +85,34 @@ npx vue-demi-switch 2
 # or
 npx vue-demi-switch 3
 ```
+
+### Package Aliasing
+
+If you would like to import `vue` under an alias, you can use the following command 
+
+```bash
+npx vue-demi-switch 2 vue2
+# or
+npx vue-demi-switch 3 vue3
+```
+
+Then `vue-demi` will redirect APIs from the alias name you specified, for example:
+
+```ts
+import * as Vue from 'vue3'
+
+var isVue2 = false
+var isVue3 = true
+
+export * from 'vue3'
+export {
+  Vue,
+  isVue2,
+  isVue3,
+}
+```
+
+### Auto Fix
 
 If the `postinstall` hook doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting.
 
