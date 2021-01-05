@@ -1,7 +1,7 @@
 import * as Vue from 'vue'
 declare const isVue2: boolean
 declare const isVue3: boolean
-declare const install: (vue?: Vue) => void
+declare const install: (vue?: any) => void
 
 export * from 'vue'
 export {
