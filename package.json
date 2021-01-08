@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
-    "release": "npx bumpp --tag --commit --push && yarn publish"
+    "release": "npx bumpp --tag --commit --push && npm publish"
   },
   "peerDependencies": {
     "vue": "^2.6.0 || >=3.0.0-rc.1"
