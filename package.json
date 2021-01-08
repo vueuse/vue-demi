@@ -6,8 +6,10 @@
   "module": "lib/index.esm.js",
   "unpkg": "lib/index.iife.js",
   "jsdelivr": "lib/index.iife.js",
+  "funding": "https://github.com/sponsors/antfu",
   "repository": "https://github.com/antfu/vue-demi.git",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
@@ -24,5 +26,10 @@
   "bin": {
     "vue-demi-fix": "bin/vue-demi-fix.js",
     "vue-demi-switch": "bin/vue-demi-switch.js"
+  },
+  "devDependencies": {
+    "@vue/composition-api": "^1.0.0-beta.25",
+    "vue2": "^2.6.12",
+    "vue": "^3.0.5"
   }
 }

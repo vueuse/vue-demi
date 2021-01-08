@@ -1,0 +1,25 @@
+devDependencies:
+  '@vue/composition-api': 1.0.0-beta.25_vue@2.6.12
+  vue: 2.6.12
+lockfileVersion: 5.2
+packages:
+  /@vue/composition-api/1.0.0-beta.25_vue@2.6.12:
+    dependencies:
+      tslib: 2.1.0
+      vue: 2.6.12
+    dev: true
+    peerDependencies:
+      vue: '>= 2.5 < 3'
+    resolution:
+      integrity: sha512-Dmbq9jMS82BUrrjOkofRJtHOunq711HRJRwjyoWEVPh/UkKa5MdHqV8UcICsQTN8ExqmDBREvkzdon3jH1G0IA==
+  /tslib/2.1.0:
+    dev: true
+    resolution:
+      integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
+  /vue/2.6.12:
+    dev: true
+    resolution:
+      integrity: sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
+specifiers:
+  '@vue/composition-api': ^1.0.0-beta.25
+  vue: ^2.6.12

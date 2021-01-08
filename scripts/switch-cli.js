@@ -1,4 +1,4 @@
-const switchVersion = require('./switch')
+const { switchVersion } = require('./utils')
 
 const version = process.argv[2]
 const vueEntry = process.argv[3] || 'vue'
