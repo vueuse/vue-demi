@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { join } = require('path')
-const { execSync } = require('child_process')
+const { execSync, exec } = require('child_process')
 
 const DIR = '../vue-demi-test'
 
@@ -19,9 +19,14 @@ execSync(`${install} vue-demi@${source}`, { cwd: DIR, stdio: 'inherit' })
 
 const cjs = fs.readFileSync(join(DIR, 'node_modules/vue-demi/lib/index.cjs.js'), 'utf-8')
 
-if (cjs.includes(`exports.isVue2 = ${isVue2}`)) {
-  process.exit(0)
-} else {
+if (!cjs.includes(`exports.isVue2 = ${isVue2}`)) {
   console.log(cjs)
+  process.exit(1)
+} 
+
+const value = execSync('node -e "console.log(require("vue-demi").isVue2)', { cwd: DIR })
+
+if (value !== `${isVue2}`) {
+  console.log("eval", value)
   process.exit(1)
 }
