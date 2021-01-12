@@ -7,31 +7,56 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  npm:
     strategy:
       matrix:
-        # node: [12.x, 14.x, 15.x]
-        node: [12.x]
+        node: [12.x, 15.x]
         os: [ubuntu-latest]
-        vue: ["vue@2 @vue/composition-api", "vue@3"]
+        vue: [2, 3]
         
     runs-on: ${{ matrix.os }}
 
-    defaults:
-      run:
-        working-directory: ./test
-
     steps:
-      - run: mkdir test
-        working-directory: .
-
       - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-
       - run: npm -v
-      - run: echo "{}" > package.json
-      - run: npm i ${{ matrix.vue }}
-      - run: npm i vue-demi
-      - run: cat node_modules/vue-demi/lib/index.cjs.js
+      - run: node .github/test.js "npm i" ${{ matrix.vue }}
+  
+  yarn:
+    strategy:
+      matrix:
+        node: [12.x, 14.x]
+        os: [ubuntu-latest]
+        vue: [2, 3]
+        yarn: [latest, berry]
+        
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: yarn set version ${{ matrix.yarn }}
+      - run: yarn --version
+      - run: node .github/test.js "yarn add" ${{ matrix.vue }}
+  
+  pnpm:
+    strategy:
+      matrix:
+        node: [12.x, 14.x]
+        os: [ubuntu-latest]
+        vue: [2, 3]
+        
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm i -g pnpm
+      - run: pnpm -v
+      - run: node .github/test.js "pnpm i" ${{ matrix.vue }}
