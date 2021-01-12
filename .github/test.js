@@ -24,7 +24,7 @@ if (!cjs.includes(`exports.isVue2 = ${isVue2}`)) {
   process.exit(1)
 } 
 
-const value = execSync('node -e "console.log(require(\'vue-demi\').isVue2)', { cwd: DIR })
+const value = execSync('node -e "console.log(require(\'vue-demi\').isVue2)"', { cwd: DIR })
 
 if (value !== `${isVue2}`) {
   console.log("eval", value)
