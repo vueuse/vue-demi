@@ -17,8 +17,10 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
       - run: npm -v
@@ -35,8 +37,10 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
       - run: yarn set version ${{ matrix.yarn }}
@@ -53,8 +57,10 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
       - run: npm i -g pnpm
