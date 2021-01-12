@@ -2,9 +2,9 @@ const fs = require('fs')
 const { join } = require('path')
 const { execSync } = require('child_process')
 
-const DIR = '_test'
+const DIR = '../vue-demi-test'
 
-const [install, version, source="file:.."] = process.argv.slice(2)
+const [install, version, source="file:../vue-demi"] = process.argv.slice(2)
 
 isVue2 = version === '2'
 
