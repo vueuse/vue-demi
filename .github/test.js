@@ -15,7 +15,7 @@ fs.mkdirSync(DIR)
 fs.writeFileSync(join(DIR, 'package.json'), '{}', 'utf-8')
 
 execSync(`${install} ${isVue2 ? 'vue@2 @vue/composition-api' : 'vue@3' }`, { cwd: DIR, stdio: 'inherit' })
-execSync(`${install} vue-demi@..`, { cwd: DIR, stdio: 'inherit' })
+execSync(`${install} vue-demi@file:..`, { cwd: DIR, stdio: 'inherit' })
 
 const cjs = fs.readFileSync(join(DIR, 'node_modules/vue-demi/lib/index.cjs.js'), 'utf-8')
 
