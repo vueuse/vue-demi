@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
-    - run: rm -r *
+    - run: rm -r ./*
     - run: npm -v
     - run: echo "{}" > package.json
     - run: npm i ${{ matrix.vue }}
