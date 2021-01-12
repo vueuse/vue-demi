@@ -119,3 +119,4 @@ dist
 package-lock.json
 examples/**/yarn.lock
 .DS_Store
+_test
