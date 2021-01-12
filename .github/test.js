@@ -19,7 +19,7 @@ execSync(`${install} vue-demi@file:..`, { cwd: DIR, stdio: 'inherit' })
 
 const cjs = fs.readFileSync(join(DIR, 'node_modules/vue-demi/lib/index.cjs.js'), 'utf-8')
 
-if (cjs.includes(`module.exports.isVue2 = ${isVue2}`)) 
+if (cjs.includes(`exports.isVue2 = ${isVue2}`)) 
   process.exit(0)
 else
   process.exit(1)
