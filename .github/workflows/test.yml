@@ -20,6 +20,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
+    - run: mkdir test && cd test
     - run: npm -v
     - run: npm init -y
     - run: npm i ${{ matrix.vue }}
