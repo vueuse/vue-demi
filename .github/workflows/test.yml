@@ -16,16 +16,22 @@ jobs:
         vue: ["vue@2 @vue/composition-api", "vue@3"]
         
     runs-on: ${{ matrix.os }}
+
     defaults:
       run:
         working-directory: ./test
+
     steps:
-    - name: Use Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node }}
-    - run: npm -v
-    - run: echo "{}" > package.json
-    - run: npm i ${{ matrix.vue }}
-    - run: npm i vue-demi
-    - run: cat node_modules/vue-demi/lib/index.cjs.js
+      - run: mkdir test
+        working-directory: .
+
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - run: npm -v
+      - run: echo "{}" > package.json
+      - run: npm i ${{ matrix.vue }}
+      - run: npm i vue-demi
+      - run: cat node_modules/vue-demi/lib/index.cjs.js
