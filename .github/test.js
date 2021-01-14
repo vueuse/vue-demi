@@ -1,16 +1,17 @@
 const fs = require('fs')
 const { join } = require('path')
 const { execSync } = require('child_process')
-const {version} = require('./package.json')
+const { version } = require('./package.json')
 
 const root = '../vue-demi-test'
-const [agent, version, type] = process.argv.slice(2)
+const [agent, vue, type] = process.argv.slice(2)
 
-isVue2 = version === '2'
+isVue2 = vue === '2'
 
 function clean() {
-  if (fs.existsSync(root)) 
+  if (fs.existsSync(root)) {
     fs.rmSync(root, { recursive: true })
+  }
 }
 
 function prepareSimple() {
@@ -57,7 +58,7 @@ function install(dir) {
     npm: 'npm i',
     pnpm: 'pnpm i',
   }[agent]
-  
+
   execSync(`${command} ${isVue2 ? 'vue@2 @vue/composition-api' : 'vue@3'}`, { cwd: dir, stdio: 'inherit' })
 
   execSync(`${command} ../vue-demi/vue-demi.tgz`, { cwd: dir, stdio: 'inherit' })
@@ -72,14 +73,12 @@ function check(dir) {
   }
 }
 
-function pack(){
+function pack() {
   execSync('npm pack', { stdio: 'inherit' })
   fs.rename(`vue-demi-${version}.tgz`, 'vue-demi.tgz')
 }
 
 clean()
 pack()
-let dir = type === 'workspace'
-  ? prepareWorkspace()
-  : prepareSimple()
+let dir = type === 'workspace' ? prepareWorkspace() : prepareSimple()
 check(dir)
