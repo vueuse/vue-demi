@@ -75,7 +75,7 @@ function check(dir) {
 
 function pack() {
   execSync('npm pack', { stdio: 'inherit' })
-  fs.rename(`vue-demi-${version}.tgz`, 'vue-demi.tgz')
+  fs.renameSync(`vue-demi-${version}.tgz`, 'vue-demi.tgz')
 }
 
 clean()
