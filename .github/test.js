@@ -80,7 +80,7 @@ function link(){
     yarn: 'yarn link',
     npm: 'npm link',
     pnpm: 'pnpm link',
-  }[agent], { cwd: dir, stdio: 'inherit' })
+  }[agent], { stdio: 'inherit' })
 }
 
 clean()
