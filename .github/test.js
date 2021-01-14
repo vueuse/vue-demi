@@ -1,6 +1,7 @@
 const fs = require('fs')
 const { join } = require('path')
 const { execSync } = require('child_process')
+const {version} = require('./package.json')
 
 const root = '../vue-demi-test'
 const [agent, version, type] = process.argv.slice(2)
@@ -59,13 +60,7 @@ function install(dir) {
   
   execSync(`${command} ${isVue2 ? 'vue@2 @vue/composition-api' : 'vue@3'}`, { cwd: dir, stdio: 'inherit' })
 
-  execSync({
-    yarn: 'yarn link vue-demi',
-    npm: 'npm link vue-demi',
-    pnpm: 'pnpm link vue-demi',
-  }[agent], { cwd: dir, stdio: 'inherit' })
-
-  execSync(`${command} vue-demi`, { cwd: dir, stdio: 'inherit' })
+  execSync(`${command} ..vue-demi/vue-demi.tgz`, { cwd: dir, stdio: 'inherit' })
 }
 
 function check(dir) {
@@ -77,16 +72,13 @@ function check(dir) {
   }
 }
 
-function link(){
-  execSync({
-    yarn: 'yarn link .',
-    npm: 'npm link .',
-    pnpm: 'pnpm link .',
-  }[agent], { stdio: 'inherit' })
+function pack(){
+  execSync('npm pack', { stdio: 'inherit' })
+  fs.rename(`vue-demi-${version}.tgz`, 'vue-demi.tgz')
 }
 
 clean()
-link()
+pack()
 let dir = type === 'workspace'
   ? prepareWorkspace()
   : prepareSimple()
