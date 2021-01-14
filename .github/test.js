@@ -79,9 +79,9 @@ function check(dir) {
 
 function link(){
   execSync({
-    yarn: 'yarn link',
-    npm: 'npm link',
-    pnpm: 'pnpm link',
+    yarn: 'yarn link .',
+    npm: 'npm link .',
+    pnpm: 'pnpm link .',
   }[agent], { stdio: 'inherit' })
 }
 
