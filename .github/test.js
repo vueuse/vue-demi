@@ -58,11 +58,11 @@ function install(dir) {
   
   execSync(`${command} ${isVue2 ? 'vue@2 @vue/composition-api' : 'vue@3'}`, { cwd: dir, stdio: 'inherit' })
 
-  execSync({
-    yarn: 'yarn link vue-demi',
-    npm: 'npm link vue-demi',
-    pnpm: 'pnpm link vue-demi',
-  }[agent], { cwd: dir, stdio: 'inherit' })
+  // execSync({
+  //   yarn: 'yarn link vue-demi',
+  //   npm: 'npm link vue-demi',
+  //   pnpm: 'pnpm link vue-demi',
+  // }[agent], { cwd: dir, stdio: 'inherit' })
 
   execSync(`${command} vue-demi`, { cwd: dir, stdio: 'inherit' })
 }
@@ -85,7 +85,7 @@ function link(){
 }
 
 clean()
-link()
+// link()
 let dir = type === 'workspace'
   ? prepareWorkspace()
   : prepareSimple()
