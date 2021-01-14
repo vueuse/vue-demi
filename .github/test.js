@@ -43,6 +43,7 @@ function prepareWorkspace() {
   const appDir = join(root, 'packages/app')
   fs.mkdirSync(join(root, 'packages'))
   fs.mkdirSync(appDir)
+  fs.writeFileSync(join(appDir, 'package.json'), '{}', 'utf-8')
 
   install(appDir)
 
