@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { join } = require('path')
+const { join, resolve } = require('path')
 const { execSync } = require('child_process')
 const { version } = require('../package.json')
 
