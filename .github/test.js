@@ -44,9 +44,9 @@ function prepareWorkspace() {
   fs.mkdirSync(join(root, 'packages'))
   fs.mkdirSync(appDir)
 
-  install(dir)
+  install(appDir)
 
-  return dir
+  return appDir
 }
 
 function install(dir) {

@@ -13,6 +13,7 @@ jobs:
         node: [12.x, 15.x]
         os: [ubuntu-latest]
         vue: [2, 3]
+      fail-fast: false
         
     runs-on: ${{ matrix.os }}
 
@@ -33,7 +34,8 @@ jobs:
         vue: [2, 3]
         yarn: [latest, berry]
         type: [simple, workspace]
-        
+      fail-fast: false
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -54,7 +56,8 @@ jobs:
         os: [ubuntu-latest]
         vue: [2, 3]
         type: [simple, workspace]
-        
+      fail-fast: false
+      
     runs-on: ${{ matrix.os }}
 
     steps:
