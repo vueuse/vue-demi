@@ -45,9 +45,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: yarn set version ${{ matrix.yarn }}
-      - run: yarn --version
-      - run: node .github/test.js yarn ${{ matrix.vue }} ${{ matrix.type }}
+      - run: node .github/test.js yarn ${{ matrix.vue }} ${{ matrix.type }} ${{ matrix.yarn }}
   
   pnpm:
     strategy:
@@ -57,7 +55,7 @@ jobs:
         vue: [2, 3]
         type: [simple, workspace]
       fail-fast: false
-      
+
     runs-on: ${{ matrix.os }}
 
     steps:

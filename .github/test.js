@@ -4,7 +4,7 @@ const { execSync } = require('child_process')
 const { version } = require('../package.json')
 
 const root = '../vue-demi-test'
-const [agent, vue, type] = process.argv.slice(2)
+const [agent, vue, type, yarnVersion] = process.argv.slice(2)
 
 isVue2 = vue === '2'
 
@@ -53,6 +53,10 @@ function prepareWorkspace() {
 }
 
 function install(dir) {
+  if (agent === 'yarn') {
+    execSync(`yarn set version ${yarnVersion}`, { cwd: dir, stdio: 'inherit' })
+  }
+
   const command = {
     yarn: 'yarn add',
     npm: 'npm i',
