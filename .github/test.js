@@ -60,7 +60,7 @@ function install(dir) {
   
   execSync(`${command} ${isVue2 ? 'vue@2 @vue/composition-api' : 'vue@3'}`, { cwd: dir, stdio: 'inherit' })
 
-  execSync(`${command} ..vue-demi/vue-demi.tgz`, { cwd: dir, stdio: 'inherit' })
+  execSync(`${command} ../vue-demi/vue-demi.tgz`, { cwd: dir, stdio: 'inherit' })
 }
 
 function check(dir) {
