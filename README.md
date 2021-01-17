@@ -1,6 +1,6 @@
 <p align="center">
 <br>
-<img src="./assets/banner.png" width="500"/>
+<img src="./assets/banner.png" width="600"/>
 <br>
 <br>
 <a href='https://www.npmjs.com/package/vue-demi'><img src='https://img.shields.io/npm/v/vue-demi?color=42b883' alt='npm'></a>
