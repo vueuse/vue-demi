@@ -128,6 +128,7 @@ See [examples](./examples).
 - [@vue/apollo-composable](https://github.com/vuejs/vue-apollo/tree/v4/packages/vue-apollo-composable) - Apollo GraphQL functions for Vue Composition API
 - [vuelidate](https://github.com/vuelidate/vuelidate) - Simple, lightweight model-based validation
 - [vue-composition-test-utils](https://github.com/ariesjia/vue-composition-test-utils) - Simple vue composition api unit test utilities
+- [vue-use-stripe](https://github.com/frandiox/vue-use-stripe) - Stripe Elements wrapper for Vue.js
 
 > open a PR to add your library ;)
 
