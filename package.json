@@ -9,7 +9,6 @@
   "funding": "https://github.com/sponsors/antfu",
   "repository": "https://github.com/antfu/vue-demi.git",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
-  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
