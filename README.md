@@ -61,15 +61,26 @@ if (isVue2) {
 }
 ```
 
+### `Vue2`
+
+To avoid bringing in all the tree-shakable modules, we provide a `Vue2` export to support access to Vue 2's global API. (See [#41](https://github.com/vueuse/vue-demi/issues/41).)
+
+```ts
+import { Vue2 } from 'vue-demi'
+
+if (Vue2) {
+  Vue2.config.ignoredElements.push('x-foo')
+}
+```
+
 ### `install()`
 
 Composition API in Vue 2 is provided as a plugin and need to install to Vue instance before using. Normally, `vue-demi` will try to install it automatically. For some usages that you might need to ensure the plugin get installed correctly, the `install()` API is exposed to as a safe version of `Vue.use(CompositionAPI)`. `install()` in Vue 3 environment will be an empty function (no-op).
 
 ```ts
-import Vue from 'vue'
-import { install } from 'vue-demi'
+import { Vue2, install } from 'vue-demi'
 
-install(Vue)
+install(Vue2)
 ```
 
 ## CLI
@@ -101,10 +112,12 @@ import * as Vue from 'vue3'
 
 var isVue2 = false
 var isVue3 = true
+var Vue2 = undefined
 
 export * from 'vue3'
 export {
   Vue,
+  Vue2,
   isVue2,
   isVue3,
 }
