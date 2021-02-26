@@ -78,9 +78,9 @@ if (Vue2) {
 Composition API in Vue 2 is provided as a plugin and need to install to Vue instance before using. Normally, `vue-demi` will try to install it automatically. For some usages that you might need to ensure the plugin get installed correctly, the `install()` API is exposed to as a safe version of `Vue.use(CompositionAPI)`. `install()` in Vue 3 environment will be an empty function (no-op).
 
 ```ts
-import { Vue2, install } from 'vue-demi'
+import { install } from 'vue-demi'
 
-install(Vue2)
+install()
 ```
 
 ## CLI
