@@ -165,8 +165,8 @@ or
     "test:3": "vue-demi-switch 3 vue3 && jest",
   },
   "devDependencies": {
-    "vue3": "npm:vue@3",
-    "vue": "^2.6.0"
+    "vue": "^2.6.0",
+    "vue3": "npm:vue@3"
   },
 }
 ```
