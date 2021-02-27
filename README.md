@@ -24,6 +24,7 @@ yarn add vue-demi
 ```
 
 Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to specify what versions you support.
+If needed, add the version of Vue you want for your tests and build, in dev dependencies. You can support both version of Vue for your tests by adding `"vue2": "npm:vue@2"` in your dev dependencies.
 
 ```json
 {
@@ -38,7 +39,10 @@ Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to speci
     "@vue/composition-api": {
       "optional": true
     }
-  }
+  },
+  "devDependencies": {
+    "vue": "^3.0.0"
+  },
 }
 ```
 
