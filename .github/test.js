@@ -1,10 +1,10 @@
 const fs = require('fs')
 const { join } = require('path')
-const { execSync, exec } = require('child_process')
+const { execSync } = require('child_process')
 
 const DIR = '../vue-demi-test'
 
-const [install, version, source="file:../vue-demi"] = process.argv.slice(2)
+const [install, version, source='file:../vue-demi'] = process.argv.slice(2)
 
 isVue2 = version === '2'
 
@@ -24,9 +24,18 @@ if (!cjs.includes(`exports.isVue2 = ${isVue2}`)) {
   process.exit(1)
 } 
 
-const value = execSync('node -e "console.log(require(\'vue-demi\').isVue2)"', { cwd: DIR }).toString().trim()
+const is2 = execSync('node -e "console.log(require(\'vue-demi\').isVue2)"', { cwd: DIR }).toString().trim()
 
-if (value !== `${isVue2}`) {
-  console.log("eval", value)
+if (is2 !== `${isVue2}`) {
+  console.log('isVue2', is2)
+  process.exit(1)
+}
+
+const has2 = execSync('node -e "console.log(require(\'vue-demi\').Vue2 !== undefined)"', { cwd: DIR }).toString().trim()
+
+if (has2 !== `${isVue2}`) {
+  console.log('has2', has2)
+  console.log('is2', is2)
+  console.log('cjs', cjs)
   process.exit(1)
 }
