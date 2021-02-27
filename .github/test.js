@@ -1,10 +1,10 @@
 const fs = require('fs')
-const { join } = require('path')
+const { join, resolve } = require('path')
 const { execSync } = require('child_process')
 
-const DIR = '../vue-demi-test'
+const DIR = resolve(__dir, '../vue-demi-test')
 
-const [install, version, source='file:../vue-demi'] = process.argv.slice(2)
+const [install, version, source='file:..'] = process.argv.slice(2)
 
 isVue2 = version === '2'
 
@@ -17,7 +17,7 @@ fs.writeFileSync(join(DIR, 'package.json'), '{}', 'utf-8')
 execSync(`${install} ${isVue2 ? 'vue@2 @vue/composition-api' : 'vue@3' }`, { cwd: DIR, stdio: 'inherit' })
 execSync(`${install} vue-demi@${source}`, { cwd: DIR, stdio: 'inherit' })
 
-const cjs = fs.readFileSync(join(DIR, 'node_modules/vue-demi/lib/index.cjs.js'), 'utf-8')
+const cjs = fs.readFileSync(resolve(DIR, '../lib/index.cjs.js'), 'utf-8')
 
 let failed = false
 
