@@ -19,16 +19,18 @@ execSync(`${install} vue-demi@${source}`, { cwd: DIR, stdio: 'inherit' })
 
 const cjs = fs.readFileSync(join(DIR, 'node_modules/vue-demi/lib/index.cjs.js'), 'utf-8')
 
+let failed = false
+
 if (!cjs.includes(`exports.isVue2 = ${isVue2}`)) {
-  console.log(cjs)
-  process.exit(1)
+  console.log('CJS:', cjs)
+  failed = true
 } 
 
 const is2 = execSync('node -e "console.log(require(\'vue-demi\').isVue2)"', { cwd: DIR }).toString().trim()
 
 if (is2 !== `${isVue2}`) {
   console.log('isVue2', is2)
-  process.exit(1)
+  failed = true
 }
 
 const has2 = execSync('node -e "console.log(require(\'vue-demi\').Vue2 !== undefined)"', { cwd: DIR }).toString().trim()
@@ -37,5 +39,11 @@ if (has2 !== `${isVue2}`) {
   console.log('has2', has2)
   console.log('is2', is2)
   console.log('cjs', cjs)
-  process.exit(1)
+  failed = true
+}
+
+if (failed) {
+  setTimeout(()=>{
+    process.exit(1)
+  }, 0)
 }
