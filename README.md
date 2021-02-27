@@ -25,7 +25,7 @@ yarn add vue-demi
 
 Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to specify what versions you support.
 
-```json
+```jsonc
 {
   "dependencies": {
     "vue-demi": "latest"
@@ -131,12 +131,24 @@ export {
 }
 ```
 
-### Testing with both version
+### Auto Fix
 
-You can support both version of Vue for your tests by adding npm alias in your dev dependencies.
+If the `postinstall` hook doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting.
+
+```bash
+npx vue-demi-fix
+```
+
+### Isomorphic Testings
+
+You can support testing for both versions by adding npm alias in your dev dependencies. For example:
 
 ```json
 {
+  "scripts": {
+    "test:2": "vue-demi-switch 2 vue2 && jest",
+    "test:3": "vue-demi-switch 3 && jest",
+  },
   "devDependencies": {
     "vue": "^3.0.0",
     "vue2": "npm:vue@2"
@@ -144,12 +156,19 @@ You can support both version of Vue for your tests by adding npm alias in your d
 }
 ```
 
-### Auto Fix
+or
 
-If the `postinstall` hook doesn't get triggered or you have updated the Vue version, try to run the following command to resolve the redirecting.
-
-```bash
-npx vue-demi-fix
+```json
+{
+  "scripts": {
+    "test:2": "vue-demi-switch 2 && jest",
+    "test:3": "vue-demi-switch 3 vue3 && jest",
+  },
+  "devDependencies": {
+    "vue3": "npm:vue@3",
+    "vue": "^2.6.0"
+  },
+}
 ```
 
 ## Examples
