@@ -2,7 +2,7 @@ const fs = require('fs')
 const { join, resolve } = require('path')
 const { execSync } = require('child_process')
 
-const DIR = resolve(__dir, '../vue-demi-test')
+const DIR = resolve(__dirname, '../vue-demi-test')
 
 const [install, version, source='file:..'] = process.argv.slice(2)
 
