@@ -1,34 +1,40 @@
 {
   "name": "vue-demi",
   "version": "0.6.2",
-  "main": "lib/index.cjs.js",
-  "typings": "lib/index.d.ts",
-  "module": "lib/index.esm.js",
-  "unpkg": "lib/index.iife.js",
-  "jsdelivr": "lib/index.iife.js",
-  "funding": "https://github.com/sponsors/antfu",
   "repository": "https://github.com/antfu/vue-demi.git",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "funding": "https://github.com/sponsors/antfu",
   "license": "MIT",
-  "scripts": {
-    "postinstall": "node ./scripts/postinstall.js",
-    "release": "npx bumpp --tag --commit --push && npm publish"
-  },
-  "peerDependencies": {
-    "vue": "^2.6.0 || >=3.0.0-rc.1"
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "main": "lib/index.cjs.js",
+  "jsdelivr": "lib/index.iife.js",
+  "unpkg": "lib/index.iife.js",
+  "module": "lib/index.esm.js",
+  "typings": "lib/index.d.ts",
+  "bin": {
+    "vue-demi-fix": "bin/vue-demi-fix.js",
+    "vue-demi-switch": "bin/vue-demi-switch.js"
   },
   "files": [
     "lib",
     "bin",
     "scripts"
   ],
-  "bin": {
-    "vue-demi-fix": "bin/vue-demi-fix.js",
-    "vue-demi-switch": "bin/vue-demi-switch.js"
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js",
+    "release": "npx bumpp --tag --commit --push && npm publish"
   },
   "devDependencies": {
-    "@vue/composition-api": "^1.0.0-beta.25",
-    "vue2": "^2.6.12",
-    "vue": "^3.0.5"
+    "@vue/composition-api": "^1.0.0-rc.2",
+    "vue": "^3.0.5",
+    "vue2": "npm:vue@2.6.12"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-beta.1",
+    "vue": "^2.6.0 || >=3.0.0-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   }
 }

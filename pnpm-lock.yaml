@@ -1,17 +1,103 @@
 devDependencies:
-  '@vue/composition-api': 1.0.0-beta.25_vue@2.6.12
-  vue: 2.6.12
+  '@vue/composition-api': 1.0.0-rc.2_vue@3.0.6
+  vue: 3.0.6
+  vue2: /vue/2.6.12
 lockfileVersion: 5.2
 packages:
-  /@vue/composition-api/1.0.0-beta.25_vue@2.6.12:
+  /@babel/helper-validator-identifier/7.12.11:
+    dev: true
+    resolution:
+      integrity: sha512-np/lG3uARFybkoHokJUmf1QfEvRVCPbmQeUQpKow5cQ3xWrV9i3rUHodKDJPQfTVX61qKi+UdYk8kik84n7XOw==
+  /@babel/parser/7.13.4:
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-uvoOulWHhI+0+1f9L4BoozY7U5cIkZ9PgJqvb041d6vypgUmtVPG4vmGm4pSggjl8BELzvHyUeJSUyEMY6b+qA==
+  /@babel/types/7.13.0:
+    dependencies:
+      '@babel/helper-validator-identifier': 7.12.11
+      lodash: 4.17.21
+      to-fast-properties: 2.0.0
+    dev: true
+    resolution:
+      integrity: sha512-hE+HE8rnG1Z6Wzo+MhaKE5lM5eMx71T4EHJgku2E3xIfaULhDcxiiRxUYgwX8qwP1BBSlag+TdGOt6JAidIZTA==
+  /@vue/compiler-core/3.0.6:
+    dependencies:
+      '@babel/parser': 7.13.4
+      '@babel/types': 7.13.0
+      '@vue/shared': 3.0.6
+      estree-walker: 2.0.2
+      source-map: 0.6.1
+    dev: true
+    resolution:
+      integrity: sha512-O7QzQ39DskOoPpEDWRvKwDX7Py9UNT7SvLHvBdIfckGA3OsAEBdiAtuYQNcVmUDeBajm+08v5wyvHWBbWgkilQ==
+  /@vue/compiler-dom/3.0.6:
+    dependencies:
+      '@vue/compiler-core': 3.0.6
+      '@vue/shared': 3.0.6
+    dev: true
+    resolution:
+      integrity: sha512-q1wfHzYwvDRAhBlx+Qa+n3Bu5nHr1qL/j0UbpNlbQDwIlt9zpvmXUrUCL+i55Bh5lLKvSe+mNo0qlwNEApm+jA==
+  /@vue/composition-api/1.0.0-rc.2_vue@3.0.6:
     dependencies:
       tslib: 2.1.0
-      vue: 2.6.12
+      vue: 3.0.6
     dev: true
     peerDependencies:
       vue: '>= 2.5 < 3'
     resolution:
-      integrity: sha512-Dmbq9jMS82BUrrjOkofRJtHOunq711HRJRwjyoWEVPh/UkKa5MdHqV8UcICsQTN8ExqmDBREvkzdon3jH1G0IA==
+      integrity: sha512-R4XEvT+qXiT/lnsLzqhjkR/L/ALuNeeQPZqredpLduGKwZtmt2l5I3kT1W+c/157hrY732eFlsPUGz/q9vFaYg==
+  /@vue/reactivity/3.0.6:
+    dependencies:
+      '@vue/shared': 3.0.6
+    dev: true
+    resolution:
+      integrity: sha512-hX8PnZayNMoljWSYrZW0OclQnRaMoHxvi5eeFVFPDr7+tzBeiftmmozKttxxCLoDxBWX1B4gNc237DIcYU63Lw==
+  /@vue/runtime-core/3.0.6:
+    dependencies:
+      '@vue/reactivity': 3.0.6
+      '@vue/shared': 3.0.6
+    dev: true
+    resolution:
+      integrity: sha512-x6N38P0DeMyrHiAxCE/rACHTyydOzlg8IyUIPkSJ4rrSkuJnAtFKQicK6fm8NuD21dwdPr8KcZ4Cn4xaqL1JJg==
+  /@vue/runtime-dom/3.0.6:
+    dependencies:
+      '@vue/runtime-core': 3.0.6
+      '@vue/shared': 3.0.6
+      csstype: 2.6.16
+    dev: true
+    resolution:
+      integrity: sha512-Y6y4Tak9//VXB2mp2NVQxbwC4a5xsnJpotpo8yBAB3qB3L4v4HQLpqxSkwThRwI6Y6Z7dydX/sgfraqLBE8BWg==
+  /@vue/shared/3.0.6:
+    dev: true
+    resolution:
+      integrity: sha512-c37C60HpelUZIx+SNZVEINSxkFzQYhIXFg5AynnIA4QDBmY4iSPoACfGSwSUTCTKImukPeCgY2oqRJVP3R1Mnw==
+  /csstype/2.6.16:
+    dev: true
+    resolution:
+      integrity: sha512-61FBWoDHp/gRtsoDkq/B1nWrCUG/ok1E3tUrcNbZjsE9Cxd9yzUirjS3+nAATB8U4cTtaQmAHbNndoFz5L6C9Q==
+  /estree-walker/2.0.2:
+    dev: true
+    resolution:
+      integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
+  /lodash/4.17.21:
+    dev: true
+    resolution:
+      integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+  /source-map/0.6.1:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+  /to-fast-properties/2.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=
   /tslib/2.1.0:
     dev: true
     resolution:
@@ -20,6 +106,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
+  /vue/3.0.6:
+    dependencies:
+      '@vue/compiler-dom': 3.0.6
+      '@vue/runtime-dom': 3.0.6
+      '@vue/shared': 3.0.6
+    dev: true
+    resolution:
+      integrity: sha512-fgjbe/+f1EsqG7ZbaFSnxdzQXF2DKoFCdJlPxZZJy9XMtyXS6SY8pGzLi8WYb4zmsPLHvTZz4bHW30kFDk7vfA==
 specifiers:
-  '@vue/composition-api': ^1.0.0-beta.25
-  vue: ^2.6.12
+  '@vue/composition-api': ^1.0.0-rc.2
+  vue: ^3.0.5
+  vue2: npm:vue@2.6.12
