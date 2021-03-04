@@ -183,6 +183,7 @@ See [examples](./examples).
 - [vue-composition-test-utils](https://github.com/ariesjia/vue-composition-test-utils) - Simple vue composition api unit test utilities
 - [vue-use-stripe](https://github.com/frandiox/vue-use-stripe) - Stripe Elements wrapper for Vue.js
 - [@opd/g2plot-vue](https://github.com/open-data-plan/g2plot-vue) - G2plot for vue
+- [vue-echarts](https://github.com/ecomfe/vue-echarts) - Vue.js component for Apache ECharts.
 
 > open a PR to add your library ;)
 
