@@ -184,6 +184,7 @@ See [examples](./examples).
 - [vue-use-stripe](https://github.com/frandiox/vue-use-stripe) - Stripe Elements wrapper for Vue.js
 - [@opd/g2plot-vue](https://github.com/open-data-plan/g2plot-vue) - G2plot for vue
 - [vue-echarts](https://github.com/ecomfe/vue-echarts) - Vue.js component for Apache ECharts.
+- [fluent-vue](https://github.com/Demivan/fluent-vue) - Vue.js integration for [Fluent.js](https://github.com/projectfluent/fluent.js) - JavaScript implementation of [Project Fluent](https://projectfluent.org)  
 
 > open a PR to add your library ;)
 
