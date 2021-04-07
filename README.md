@@ -55,7 +55,7 @@ Publish your plugin and all is done!
 
 ### Extra APIs
 
-`Vue Demi` provides extra APIs to help distinguishing users' environments and to do some version-specific logics.
+`Vue Demi` provides extra APIs to help distinguish users' environments and to do some version-specific logic.
 
 ### `isVue2` `isVue3`
 
@@ -83,7 +83,7 @@ if (Vue2) {
 
 ### `install()`
 
-Composition API in Vue 2 is provided as a plugin and need to install to Vue instance before using. Normally, `vue-demi` will try to install it automatically. For some usages that you might need to ensure the plugin get installed correctly, the `install()` API is exposed to as a safe version of `Vue.use(CompositionAPI)`. `install()` in Vue 3 environment will be an empty function (no-op).
+Composition API in Vue 2 is provided as a plugin and needs to be installed on the Vue instance before using. Normally, `vue-demi` will try to install it automatically. For some usages where you might need to ensure the plugin gets installed correctly, the `install()` API is exposed to as a safe version of `Vue.use(CompositionAPI)`. `install()` in the Vue 3 environment will be an empty function (no-op).
 
 ```ts
 import { install } from 'vue-demi'
@@ -175,7 +175,7 @@ or
 
 See [examples](./examples).
 
-## Who are using this?
+## Who is using this?
 
 - [VueUse](https://github.com/antfu/vueuse) - Collection of Composition API utils
 - [@vue/apollo-composable](https://github.com/vuejs/vue-apollo/tree/v4/packages/vue-apollo-composable) - Apollo GraphQL functions for Vue Composition API
