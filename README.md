@@ -185,6 +185,7 @@ See [examples](./examples).
 - [@opd/g2plot-vue](https://github.com/open-data-plan/g2plot-vue) - G2plot for vue
 - [vue-echarts](https://github.com/ecomfe/vue-echarts) - Vue.js component for Apache ECharts.
 - [fluent-vue](https://github.com/Demivan/fluent-vue) - Vue.js integration for [Fluent.js](https://github.com/projectfluent/fluent.js) - JavaScript implementation of [Project Fluent](https://projectfluent.org)  
+- [vue-datatable-url-sync](https://github.com/socotecio/vue-datatable-url-sync) - Synchronize datatable options and filters with the url to keep user preference even after refresh or navigation
 
 > open a PR to add your library ;)
 
