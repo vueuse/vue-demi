@@ -30,7 +30,7 @@ function updateVue2API() {
 
   const exports = Object.keys(VCA).filter(i => !ignoreList.includes(i))
 
-  const esmPath = path.join(dir, 'index.esm.js')
+  const esmPath = path.join(dir, 'index.esm.mjs')
   let content = fs.readFileSync(esmPath, 'utf-8')
 
   content = content.replace(
@@ -46,7 +46,7 @@ export { ${exports.join(', ')} } from '@vue/composition-api'
 
 function switchVersion(version, vue) {
   copy('index.cjs.js', version, vue)
-  copy('index.esm.js', version, vue)
+  copy('index.esm.mjs', version, vue)
   copy('index.d.ts', version, vue)
 
   if (version === 2)

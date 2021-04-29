@@ -8,11 +8,11 @@
   "main": "lib/index.cjs.js",
   "jsdelivr": "lib/index.iife.js",
   "unpkg": "lib/index.iife.js",
-  "module": "lib/index.esm.js",
+  "module": "lib/index.esm.mjs",
   "types": "lib/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/index.esm.js",
+      "import": "./lib/index.esm.mjs",
       "require": "./lib/index.cjs.js"
     },
     "./": "./"

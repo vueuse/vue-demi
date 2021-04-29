@@ -3,12 +3,13 @@ const { join, resolve } = require('path')
 const { execSync } = require('child_process')
 const { version: packageVersion } = require('../package.json')
 
-const ROOT = resolve(__dirname, '..')
-const DIR = resolve(ROOT, '../vue-demi-test')
+const [agent, version, type = 'commonjs'] = process.argv.slice(2)
 
-const [agent, version] = process.argv.slice(2)
+const ROOT = resolve(__dirname, '..')
+const DIR = resolve(ROOT, `../vue-demi-test-${type}`)
 
 const isVue2 = version === '2'
+const isCjs = type === 'commonjs'
 
 function pack() {
   execSync('npm pack', { cwd: ROOT, stdio: 'inherit' })
@@ -24,25 +25,34 @@ function installDeps() {
   execSync(`${installCmd} ${agent === 'yarn' ? `file:${tarball}` : tarball} --force`, { cwd: DIR, stdio: 'inherit' })
 }
 
-function prepareTestPackage() {
+function prepareTestPackage(type = 'commonjs') {
   if (fs.existsSync(DIR)) 
     fs.rmSync(DIR, { recursive: true })
 
   fs.mkdirSync(DIR)
-  fs.writeFileSync(join(DIR, 'package.json'), JSON.stringify({ name: 'vue-demi-test', version: packageVersion }), 'utf-8')
+  fs.writeFileSync(join(DIR, 'package.json'), JSON.stringify({
+    name: `vue-demi-test-${type}`,
+    version: packageVersion,
+    type,
+  }), 'utf-8')
 
   installDeps()
 }
 
-prepareTestPackage()
+prepareTestPackage(type)
 
-
-const cjs = fs.readFileSync(resolve(DIR, 'node_modules/vue-demi/lib/index.cjs.js'), 'utf-8')
+const indexFile = isCjs?'index.cjs.js':'index.esm.mjs'
+const mod = fs.readFileSync(resolve(DIR, `node_modules/vue-demi/lib/${indexFile}`), 'utf-8')
 
 let failed = false
 
-if (!cjs.includes(`exports.isVue2 = ${isVue2}`)) {
-  console.log('CJS:', cjs)
+if (isCjs && !mod.includes(`exports.isVue2 = ${isVue2}`)) {
+  console.log('CJS:', mod)
+  failed = true
+}
+
+if (!isCjs && !/export\s\{\n\s\sVue,\n\s\sVue2,\n\s\sisVue2/gm.test(mod)) {
+  console.log('ESM:', mod)
   failed = true
 }
 
