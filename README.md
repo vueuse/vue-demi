@@ -53,6 +53,16 @@ import { ref, reactive, defineComponent } from 'vue-demi'
 
 Publish your plugin and all is done!
 
+> When using with [Vite](https://vitejs.dev), you will need to opt-out the pre-bundling to get `vue-demi` work properly by
+> ```js
+> // vite.config.js
+> export default defineConfig({
+>   optimizeDeps: {
+>     exclude: ['vue-demi']
+>  }
+> })
+> ```
+
 ### Extra APIs
 
 `Vue Demi` provides extra APIs to help distinguish users' environments and to do some version-specific logic.
