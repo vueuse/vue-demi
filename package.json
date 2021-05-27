@@ -15,7 +15,7 @@
       "import": "./lib/index.esm.js",
       "require": "./lib/index.cjs.js"
     },
-    "./": "./"
+    "./*": "./*"
   },
   "bin": {
     "vue-demi-fix": "bin/vue-demi-fix.js",
