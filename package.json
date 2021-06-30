@@ -11,7 +11,11 @@
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "exports": {
-    ".": "./lib/index.cjs.js",
+    ".": {
+      "require": "./lib/index.cjs.js",
+      "node": "./lib/index.cjs.js",
+      "browser": "./lib/index.esm.js"
+    },
     "./*": "./*"
   },
   "bin": {
