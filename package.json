@@ -11,10 +11,7 @@
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./lib/index.esm.js",
-      "require": "./lib/index.cjs.js"
-    },
+    ".": "./lib/index.cjs.js",
     "./*": "./*"
   },
   "bin": {
