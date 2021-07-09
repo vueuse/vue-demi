@@ -31,8 +31,8 @@ Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to speci
     "vue-demi": "latest"
   },
   "peerDependencies": {
-    "@vue/composition-api": "^1.0.0-beta.1",
-    "vue": "^2.0.0 || >=3.0.0-rc.0"
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
