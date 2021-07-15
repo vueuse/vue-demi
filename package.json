@@ -1,6 +1,9 @@
 {
   "name": "vue-demi",
   "version": "0.10.1",
+  "engines": {
+    "node": ">=12"
+  },
   "repository": "https://github.com/antfu/vue-demi.git",
   "funding": "https://github.com/sponsors/antfu",
   "license": "MIT",
