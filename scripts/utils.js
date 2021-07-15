@@ -36,7 +36,7 @@ function updateVue2API() {
   content = content.replace(
     /\/\*\*VCA-EXPORTS\*\*\/[\s\S]+\/\*\*VCA-EXPORTS\*\*\//m,
 `/**VCA-EXPORTS**/
-export { ${exports.join(', ')} } from '@vue/composition-api'
+export { ${exports.join(', ')} } from '@vue/composition-api/dist/vue-composition-api.esm.js'
 /**VCA-EXPORTS**/`
     )
 
