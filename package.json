@@ -1,6 +1,6 @@
 {
   "name": "vue-demi",
-  "version": "0.11.0-beta.1",
+  "version": "0.11.0",
   "engines": {
     "node": ">=12"
   },
@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "postinstall": "node ./scripts/postinstall.js",
-    "release": "npx bumpp --tag --commit --push && npm publish --tag next"
+    "release": "npx bumpp --tag --commit --push && npm publish"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
