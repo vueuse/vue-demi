@@ -41,7 +41,7 @@ function prepareTestPackage(type = 'commonjs') {
 
 prepareTestPackage(type)
 
-const indexFile = isCjs ? 'index.cjs.js' : 'index.esm.js'
+const indexFile = isCjs ? 'index.cjs' : 'index.mjs'
 const mod = fs.readFileSync(resolve(DIR, `node_modules/vue-demi/lib/${indexFile}`), 'utf-8')
 
 let failed = false
