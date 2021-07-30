@@ -197,6 +197,7 @@ See [examples](./examples).
 - [fluent-vue](https://github.com/Demivan/fluent-vue) - Vue.js integration for [Fluent.js](https://github.com/projectfluent/fluent.js) - JavaScript implementation of [Project Fluent](https://projectfluent.org)  
 - [vue-datatable-url-sync](https://github.com/socotecio/vue-datatable-url-sync) - Synchronize datatable options and filters with the url to keep user preference even after refresh or navigation
 - [vue-insta-stories](https://github.com/UnevenSoftware/vue-insta-stories) - Instagram stories in your vue projects.
+- [vue-tiny-validate](https://github.com/FrontLabsOfficial/vue-tiny-validate) - Tiny Vue Validate Composition
 
 > open a PR to add your library ;)
 
