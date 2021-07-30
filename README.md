@@ -198,7 +198,7 @@ See [examples](./examples).
 - [vue-datatable-url-sync](https://github.com/socotecio/vue-datatable-url-sync) - Synchronize datatable options and filters with the url to keep user preference even after refresh or navigation
 - [vue-insta-stories](https://github.com/UnevenSoftware/vue-insta-stories) - Instagram stories in your vue projects.
 - [vue-tiny-validate](https://github.com/FrontLabsOfficial/vue-tiny-validate) - Tiny Vue Validate Composition
-- [v-signature](https://github.com/wobsoriano/v-perfect-signature) - Pressure-sensitive signature drawing for Vue 2 and 3
+- [v-perfect-signature](https://github.com/wobsoriano/v-perfect-signature) - Pressure-sensitive signature drawing for Vue 2 and 3
 - [vue-winbox](https://github.com/wobsoriano/vue-winbox) - A wrapper component for WinBox.js that adds the ability to mount Vue components.
 
 > open a PR to add your library ;)
