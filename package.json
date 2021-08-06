@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
-    "vue": "^3.0.0 || ^2.6.0"
+    "vue": "^3.0.0-0 || ^2.6.0"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
