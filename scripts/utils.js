@@ -17,6 +17,7 @@ function copy(name, version, vue) {
   const dest = path.join(dir, name)
   let content = fs.readFileSync(src, 'utf-8')
   content = content.replace(/'vue'/g, `'${vue}'`)
+  // unlink for pnpm, #92
   try {
     fs.unlinkSync(dest)
   } catch (error) { }
