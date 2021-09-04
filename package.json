@@ -16,7 +16,6 @@
   "exports": {
     ".": {
       "require": "./lib/index.cjs",
-      "node": "./lib/index.cjs",
       "import": "./lib/index.mjs",
       "browser": "./lib/index.mjs"
     },
