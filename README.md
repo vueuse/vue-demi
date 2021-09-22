@@ -202,6 +202,7 @@ See [examples](./examples).
 - [vue-winbox](https://github.com/wobsoriano/vue-winbox) - A wrapper component for WinBox.js that adds the ability to mount Vue components.
 - [vue-word-highlighter](https://github.com/kawamataryo/vue-word-highlighter) - The word highlighter library for Vue 2 and Vue 3
 - [vue-chart-3](https://github.com/victorgarciaesgi/vue-chart-3) - Vue.js component for Chart.js
+- [json-editor-vue](https://github.com/cloydlau/json-editor-vue) - JSON editor & viewer for Vue 2 and 3.
 
 > open a PR to add your library ;)
 
