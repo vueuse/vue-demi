@@ -7,4 +7,15 @@ You can see it being imported by
 - Vue 2 ([Vue CLI Project](./demo-vue-2-cli))
 - Vue 3 ([Vite Project](./demo-vue-3-vite))
 
-And things just works.
+And things just work!
+
+**Node 17.x Note:**
+
+For Node 17.x Edit the starting scripts to allow them to work: [(Reference)](https://stackoverflow.com/questions/69665222/node-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-ossl-evp)
+
+```
+  "scripts": {
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve --open",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build"
+  },
+  ```
