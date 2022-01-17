@@ -204,6 +204,8 @@ See [examples](./examples).
 - [vue-chart-3](https://github.com/victorgarciaesgi/vue-chart-3) - Vue.js component for Chart.js
 - [json-editor-vue](https://github.com/cloydlau/json-editor-vue) - JSON editor & viewer for Vue 2 and 3.
 - [kidar-echarts](https://github.com/kidarjs/kidar-echarts) - A simpler echarts component for Vue 2 and 3.
+- [use-screen-recorder-composition](https://github.com/yingpengsha/use-screen-recorder-composition) - Vue Composition API for easily recording screen using MediaStream APIs.
+
 > open a PR to add your library ;)
 
 ## Underhood
