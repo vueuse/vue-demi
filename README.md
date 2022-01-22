@@ -204,7 +204,8 @@ See [examples](./examples).
 - [vue-chart-3](https://github.com/victorgarciaesgi/vue-chart-3) - Vue.js component for Chart.js
 - [json-editor-vue](https://github.com/cloydlau/json-editor-vue) - JSON editor & viewer for Vue 2 and 3.
 - [kidar-echarts](https://github.com/kidarjs/kidar-echarts) - A simpler echarts component for Vue 2 and 3.
-> open a PR to add your library ;)
+- [vue-rough-notation](https://github.com/Leecason/vue-rough-notation) - RoughNotation wrapper component for Vue 2 and 3.
+  > open a PR to add your library ;)
 
 ## Underhood
 
