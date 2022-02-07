@@ -204,6 +204,7 @@ See [examples](./examples).
 - [vue-chart-3](https://github.com/victorgarciaesgi/vue-chart-3) - Vue.js component for Chart.js
 - [json-editor-vue](https://github.com/cloydlau/json-editor-vue) - JSON editor & viewer for Vue 2 and 3.
 - [kidar-echarts](https://github.com/kidarjs/kidar-echarts) - A simpler echarts component for Vue 2 and 3.
+- [vue3-sketch-ruler](https://github.com/kakajun/vue3-sketch-ruler) - The zoom operation used for page presentation for Vue 2 and 3( Replace render function with template )
 > open a PR to add your library ;)
 
 ## Underhood
