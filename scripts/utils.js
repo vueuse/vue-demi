@@ -3,12 +3,34 @@ const path = require('path')
 
 const dir = path.resolve(__dirname, '..', 'lib')
 
+// Search only local directories，exclude .node_modules
 function loadModule(name) {
-  try {
-    return require(name)
-  } catch (e) {
-    return undefined
-  }
+	const requirePaths = require.resolve.paths(name);
+	try {
+		for (let index = 0; index < requirePaths.length; index++) {
+			const requirePath = path.join(requirePaths[index], name);
+			// check for xxx/xxx/node_modules/${name}
+			if (checkDir(requirePath)) {
+				if (requirePath.lastIndexOf(".node_modules") !== -1) {
+					return null;
+				}
+				return require(requirePath);
+			}
+		}
+		return null;
+	} catch (error) {
+		console.warn(error);
+		return null;
+	}
+}
+
+function checkDir(dirPath) {
+	try {
+		const status = fs.statSync(dirPath);
+		return status.isDirectory();
+	} catch (error) {
+		return false;
+	}
 }
 
 function copy(name, version, vue) {
