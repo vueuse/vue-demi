@@ -65,7 +65,7 @@ Publish your plugin and all is done!
 
 ### Remark
 
-`Vue Demi` is only supposed to work with libraries/plugins that use the `@vue/composition-api`, that are **not** components (e.g. `VueUse`, `Pinia`, ...). In other words, you can't use a `Vue3` compiled library in a `Vue2` project and vice versa, because they use different compilers.
+`Vue Demi` is mainly supposed to work with libraries/plugins that use the `@vue/composition-api` that are **not** components (e.g. `VueUse`, `Pinia`, ...). In other words, you need to be cautious to work with `Vue SFC` because the SFC compilation process and the results are different across `Vue 2` and `Vue 3`.
 
 In order to build a component library/plugin for both `Vue2` and `Vue3` you could either publish plain `Vue` files or build your library seperately for `Vue2` and `Vue3`. Both options can be tricky because there are a few differences in their runtime APIs.
 
