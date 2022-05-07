@@ -207,7 +207,7 @@ See [examples](./examples).
 - [vue3-sketch-ruler](https://github.com/kakajun/vue3-sketch-ruler) - The zoom operation used for page presentation for Vue 2 and 3( Replace render function with template )
 - [vue-rough-notation](https://github.com/Leecason/vue-rough-notation) - RoughNotation wrapper component for Vue 2 and 3.
 > open a PR to add your library ;)
-
+- [vue-layout-page](https://github.com/chenguzhen87/vue-layout-page) - Three line layout for  Vue 2 and 3 page.
 ## Underhood
 
 See [the blog post](https://antfu.me/posts/make-libraries-working-with-vue-2-and-3/#-introducing-vue-demi).
