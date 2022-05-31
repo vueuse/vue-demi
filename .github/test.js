@@ -96,7 +96,7 @@ if (refCJS !== `24\n26`) {
   console.log(`ref(cjs): ${refCJS} !== 24\n26`)
   failed = true
 }
-const refESM = execSync(`node -e "${importESM}${snippet}"`, { cwd: DIR }).toString().trim()
+const refESM = execSync(`node -e "(async ()=>{${importESM}${snippet}})()"`, { cwd: DIR }).toString().trim()
 if (refESM !== `24\n26`) {
   console.log(`ref(esm): ${refESM} !== 24\n26`)
   failed = true
