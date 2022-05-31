@@ -25,7 +25,6 @@ yarn add vue-demi
 pnpm i vue-demi
 ```
 
-> When using pnpm, you will need to add `shamefully-hoist=true` to your project's `.npmrc` for `typescript` to find vue exports
 
 Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to specify what versions you support.
 
