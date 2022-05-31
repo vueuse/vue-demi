@@ -68,21 +68,37 @@ console.log('version: ' + outputVersion)
 const is2 = execSync(`node -e "console.log(require('vue-demi').isVue2)"`, { cwd: DIR }).toString().trim()
 
 if (is2 !== `${isVue2}`) {
-  console.log(`isVue2: ${is2} === ${isVue2}`)
+  console.log(`isVue2: ${is2} !== ${isVue2}`)
   failed = true
 }
 
 const hasVue2 = execSync(`node -e "console.log(require('vue-demi').Vue2 !== undefined)"`, { cwd: DIR }).toString().trim()
 
 if (hasVue2 !== `${isVue2}`) {
-  console.log(`hasVue2: ${hasVue2} === ${isVue2}`)
+  console.log(`hasVue2: ${hasVue2} !== ${isVue2}`)
   failed = true
 }
 
+const importCJS = `const { ref, computed } = require('vue-demi');`
+const importESM = `const { ref, computed } = await import('vue-demi');`
+
+const snippet = `
+let a = ref(12)
+let b = computed(() => a.value * 2)
+console.log(b.value)
+a.value += 1
+console.log(b.value)
+`.replace(/\n/g, ';').trim()
+
 // ref
-const refWorks = execSync(`node -e "let a = require('vue-demi').ref(12);let b = require('vue-demi').computed(()=>a.value*2);console.log(b.value)"`, { cwd: DIR }).toString().trim()
-if (refWorks !== `24`) {
-  console.log(`refWorks: ${refWorks} === 24`)
+const refCJS = execSync(`node -e "${importCJS}${snippet}"`, { cwd: DIR }).toString().trim()
+if (refCJS !== `24\n26`) {
+  console.log(`ref(cjs): ${refCJS} !== 24\n26`)
+  failed = true
+}
+const refESM = execSync(`node -e "${importESM}${snippet}"`, { cwd: DIR }).toString().trim()
+if (refESM !== `24\n26`) {
+  console.log(`ref(esm): ${refESM} !== 24\n26`)
   failed = true
 }
 
