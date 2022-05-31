@@ -8,7 +8,7 @@ const [agent, version, type = 'commonjs'] = process.argv.slice(2)
 const ROOT = resolve(__dirname, '..')
 const DIR = resolve(ROOT, `../vue-demi-test-${type}`)
 
-const isVue2 = version === '2'
+const isVue2 = version.startsWith('2.')
 const isCjs = type === 'commonjs'
 
 function pack() {
@@ -21,7 +21,7 @@ function installDeps() {
 
   let installCmd = agent === 'yarn' ? `${agent} add` : `${agent} i`
 
-  execSync(`${installCmd} ${isVue2 ? 'vue@2 @vue/composition-api' : 'vue@3'}`, { cwd: DIR, stdio: 'inherit' })
+  execSync(`${installCmd} ${isVue2 ? `vue@${version} @vue/composition-api` : 'vue@3'}`, { cwd: DIR, stdio: 'inherit' })
   execSync(`${installCmd} ${agent === 'yarn' ? `file:${tarball}` : tarball} --force`, { cwd: DIR, stdio: 'inherit' })
 }
 

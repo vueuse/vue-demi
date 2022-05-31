@@ -12,7 +12,7 @@ jobs:
       matrix:
         node: [14.x, 16.x]
         os: [ubuntu-latest]
-        vue: [2, 3]
+        vue: [2.6, 2.7, 3]
       fail-fast: false
         
     runs-on: ${{ matrix.os }}
@@ -32,7 +32,7 @@ jobs:
       matrix:
         node: [14.x, 16.x]
         os: [ubuntu-latest]
-        vue: [2, 3]
+        vue: [2.6, 2.7, 3]
         yarn: [latest, berry]
         type: [commonjs, module]
         
@@ -54,7 +54,7 @@ jobs:
       matrix:
         node: [14.x, 16.x]
         os: [ubuntu-latest]
-        vue: [2, 3]
+        vue: [2.6, 2.7, 3]
         
     runs-on: ${{ matrix.os }}
 
