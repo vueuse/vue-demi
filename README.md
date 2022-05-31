@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/vueuse/vue-demi/blob/master/assets/banner.png?raw=true" width="600"/>
+<img src="https://github.com/vueuse/vue-demi/blob/main/assets/banner.png?raw=true" width="600"/>
 <br>
 <a href='https://www.npmjs.com/package/vue-demi'><img src='https://img.shields.io/npm/v/vue-demi?color=42b883' alt='npm'></a>
 </p>
