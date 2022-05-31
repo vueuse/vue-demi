@@ -11,11 +11,6 @@ declare const install: (vue?: Vue) => void
  */
 declare const V: Vue
 
-/**
- * DebuggerEvent is a Vue 3 development only feature. This type cannot exist in Vue 2.
- */
-export declare type DebuggerEvent = never
-
 // accept no generic because Vue 3 doesn't accept any
 // https://github.com/vuejs/vue-next/pull/2758/
 export declare type Plugin = PluginObject<any> | PluginFunction<any>
