@@ -88,7 +88,9 @@ let b = computed(() => a.value * 2)
 console.log(b.value)
 a.value += 1
 console.log(b.value)
-`.replace(/\n/g, ';').trim()
+`
+  .replace(/\n/g, ';')
+  .trim()
 
 // ref
 const refCJS = execSync(`node -e "${importCJS}${snippet}"`, { cwd: DIR }).toString().trim()
@@ -96,10 +98,14 @@ if (refCJS !== `24\n26`) {
   console.log(`ref(cjs): ${refCJS} !== 24\n26`)
   failed = true
 }
-const refESM = execSync(`node -e "(async ()=>{${importESM}${snippet}})()"`, { cwd: DIR }).toString().trim()
-if (refESM !== `24\n26`) {
-  console.log(`ref(esm): ${refESM} !== 24\n26`)
-  failed = true
+
+// TODO: 2.7's ESM can't runs in Node currently
+if (!isVue27) {
+  const refESM = execSync(`node -e "(async ()=>{${importESM}${snippet}})()"`, { cwd: DIR }).toString().trim()
+  if (refESM !== `24\n26`) {
+    console.log(`ref(esm): ${refESM} !== 24\n26`)
+    failed = true
+  }
 }
 
 if (failed) {
