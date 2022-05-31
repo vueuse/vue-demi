@@ -21,7 +21,10 @@ Install this as your plugin's dependency:
 npm i vue-demi
 # or
 yarn add vue-demi
+# or 
+pnpm i vue-demi
 ```
+
 
 Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to specify what versions you support.
 
