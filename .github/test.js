@@ -71,6 +71,13 @@ if (hasVue2 !== `${isVue2}`) {
   failed = true
 }
 
+// ref
+const refWorks = execSync(`node -e "let a = require('vue-demi').ref(12);let b = require('vue-demi').computed(()=>a.value*2);console.log(b.value)"`, { cwd: DIR }).toString().trim()
+if (hasVue2 !== `24`) {
+  console.log(`refWorks: ${refWorks} === 24`)
+  failed = true
+}
+
 if (failed) {
   setTimeout(() => {
     process.exit(1)
