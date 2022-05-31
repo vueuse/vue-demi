@@ -8,7 +8,8 @@ const [agent, version, type = 'commonjs'] = process.argv.slice(2)
 const ROOT = resolve(__dirname, '..')
 const DIR = resolve(ROOT, `../vue-demi-test-${type}`)
 
-const isVue2 = version.startsWith('2.')
+const isVue2 = version.startsWith('2')
+const isVue27 = version.startsWith('2.7')
 const isCjs = type === 'commonjs'
 
 function pack() {
@@ -21,20 +22,24 @@ function installDeps() {
 
   let installCmd = agent === 'yarn' ? `${agent} add` : `${agent} i`
 
-  execSync(`${installCmd} ${isVue2 ? `vue@${version} @vue/composition-api` : 'vue@3'}`, { cwd: DIR, stdio: 'inherit' })
+  const packages = isVue27 ? 'vue@v2-alpha' : isVue2 ? `vue@2.6 @vue/composition-api` : 'vue@3'
+  execSync(`${installCmd} ${packages}`, { cwd: DIR, stdio: 'inherit' })
   execSync(`${installCmd} ${agent === 'yarn' ? `file:${tarball}` : tarball} --force`, { cwd: DIR, stdio: 'inherit' })
 }
 
 function prepareTestPackage(type = 'commonjs') {
-  if (fs.existsSync(DIR)) 
-    fs.rmSync(DIR, { recursive: true })
+  if (fs.existsSync(DIR)) fs.rmSync(DIR, { recursive: true })
 
   fs.mkdirSync(DIR)
-  fs.writeFileSync(join(DIR, 'package.json'), JSON.stringify({
-    name: `vue-demi-test-${type}`,
-    version: packageVersion,
-    type,
-  }), 'utf-8')
+  fs.writeFileSync(
+    join(DIR, 'package.json'),
+    JSON.stringify({
+      name: `vue-demi-test-${type}`,
+      version: packageVersion,
+      type,
+    }),
+    'utf-8'
+  )
 
   installDeps()
 }
@@ -56,6 +61,9 @@ if (!isCjs && !/export\s\{\n\s\sVue,\n\s\sVue2,\n\s\sisVue2/gm.test(mod)) {
   failed = true
 }
 
+const outputVersion = execSync(`node -e "console.log(require('vue-demi').version)"`, { cwd: DIR }).toString().trim()
+console.log('version: ' + outputVersion)
+
 // isVue2
 const is2 = execSync(`node -e "console.log(require('vue-demi').isVue2)"`, { cwd: DIR }).toString().trim()
 
@@ -73,7 +81,7 @@ if (hasVue2 !== `${isVue2}`) {
 
 // ref
 const refWorks = execSync(`node -e "let a = require('vue-demi').ref(12);let b = require('vue-demi').computed(()=>a.value*2);console.log(b.value)"`, { cwd: DIR }).toString().trim()
-if (hasVue2 !== `24`) {
+if (refWorks !== `24`) {
   console.log(`refWorks: ${refWorks} === 24`)
   failed = true
 }
