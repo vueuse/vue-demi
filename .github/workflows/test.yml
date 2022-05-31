@@ -10,9 +10,9 @@ jobs:
   npm:
     strategy:
       matrix:
-        node: [12.x, 15.x]
+        node: [14.x, 16.x]
         os: [ubuntu-latest]
-        vue: [2, 3]
+        vue: [2.6, 2.7, 3]
       fail-fast: false
         
     runs-on: ${{ matrix.os }}
@@ -30,9 +30,9 @@ jobs:
   yarn:
     strategy:
       matrix:
-        node: [12.x, 14.x]
+        node: [14.x, 16.x]
         os: [ubuntu-latest]
-        vue: [2, 3]
+        vue: [2.6, 2.7, 3]
         yarn: [latest, berry]
         type: [commonjs, module]
         
@@ -52,9 +52,9 @@ jobs:
   pnpm:
     strategy:
       matrix:
-        node: [12.x, 14.x]
+        node: [14.x, 16.x]
         os: [ubuntu-latest]
-        vue: [2, 3]
+        vue: [2.6, 2.7, 3]
         
     runs-on: ${{ matrix.os }}
 
