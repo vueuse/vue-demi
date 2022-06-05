@@ -13,6 +13,12 @@
 
 <br>
 
+## Strategies
+
+- `<=2.6`: exports from `vue` + `@vue/composition-api` with plugin auto installing.
+- `2.7`: exports from `vue` (Composition API is built-in in Vue 2.7).
+- `>=3.0`: exports from `vue`, with polyfill of Vue 2's `set` and `del` API.
+
 ## Usage
 
 Install this as your plugin's dependency:
@@ -24,7 +30,6 @@ yarn add vue-demi
 # or 
 pnpm i vue-demi
 ```
-
 
 Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to specify what versions you support.
 
