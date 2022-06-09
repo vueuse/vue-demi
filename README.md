@@ -214,6 +214,7 @@ See [examples](./examples).
 - [kidar-echarts](https://github.com/kidarjs/kidar-echarts) - A simpler echarts component for Vue 2 and 3.
 - [vue3-sketch-ruler](https://github.com/kakajun/vue3-sketch-ruler) - The zoom operation used for page presentation for Vue 2 and 3( Replace render function with template )
 - [vue-rough-notation](https://github.com/Leecason/vue-rough-notation) - RoughNotation wrapper component for Vue 2 and 3.
+- [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - A vue3.x image lazyload plugin.
 > open a PR to add your library ;)
 
 ## Underhood
