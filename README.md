@@ -27,7 +27,7 @@ Install this as your plugin's dependency:
 npm i vue-demi
 # or
 yarn add vue-demi
-# or
+# or 
 pnpm i vue-demi
 ```
 
@@ -49,27 +49,26 @@ Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to speci
   },
   "devDependencies": {
     "vue": "^3.0.0" // or "^2.6.0" base on your preferred working environment
-  }
+  },
 }
 ```
 
 Import everything related to Vue from it, it will redirect to `vue@2` + `@vue/composition-api` or `vue@3` based on users' environments.
 
 ```ts
-import { ref, reactive, defineComponent } from 'vue-demi';
+import { ref, reactive, defineComponent } from 'vue-demi'
 ```
 
 Publish your plugin and all is done!
 
 > When using with [Vite](https://vitejs.dev), you will need to opt-out the pre-bundling to get `vue-demi` work properly by
->
 > ```js
 > // vite.config.js
 > export default defineConfig({
 >   optimizeDeps: {
->     exclude: ['vue-demi'],
->   },
-> });
+>     exclude: ['vue-demi']
+>  }
+> })
 > ```
 
 ### Extra APIs
@@ -79,7 +78,7 @@ Publish your plugin and all is done!
 ### `isVue2` `isVue3`
 
 ```ts
-import { isVue2, isVue3 } from 'vue-demi';
+import { isVue2, isVue3 } from 'vue-demi'
 
 if (isVue2) {
   // Vue 2 only
@@ -93,10 +92,10 @@ if (isVue2) {
 To avoid bringing in all the tree-shakable modules, we provide a `Vue2` export to support access to Vue 2's global API. (See [#41](https://github.com/vueuse/vue-demi/issues/41).)
 
 ```ts
-import { Vue2 } from 'vue-demi';
+import { Vue2 } from 'vue-demi'
 
 if (Vue2) {
-  Vue2.config.ignoredElements.push('x-foo');
+  Vue2.config.ignoredElements.push('x-foo')
 }
 ```
 
@@ -105,9 +104,9 @@ if (Vue2) {
 Composition API in Vue 2 is provided as a plugin and needs to be installed on the Vue instance before using. Normally, `vue-demi` will try to install it automatically. For some usages where you might need to ensure the plugin gets installed correctly, the `install()` API is exposed to as a safe version of `Vue.use(CompositionAPI)`. `install()` in the Vue 3 environment will be an empty function (no-op).
 
 ```ts
-import { install } from 'vue-demi';
+import { install } from 'vue-demi'
 
-install();
+install()
 ```
 
 ## CLI
@@ -124,7 +123,7 @@ npx vue-demi-switch 3
 
 ### Package Aliasing
 
-If you would like to import `vue` under an alias, you can use the following command
+If you would like to import `vue` under an alias, you can use the following command 
 
 ```bash
 npx vue-demi-switch 2 vue2
@@ -135,14 +134,19 @@ npx vue-demi-switch 3 vue3
 Then `vue-demi` will redirect APIs from the alias name you specified, for example:
 
 ```ts
-import * as Vue from 'vue3';
+import * as Vue from 'vue3'
 
-var isVue2 = false;
-var isVue3 = true;
-var Vue2 = undefined;
+var isVue2 = false
+var isVue3 = true
+var Vue2 = undefined
 
-export * from 'vue3';
-export { Vue, Vue2, isVue2, isVue3 };
+export * from 'vue3'
+export {
+  Vue,
+  Vue2,
+  isVue2,
+  isVue3,
+}
 ```
 
 ### Auto Fix
@@ -161,12 +165,12 @@ You can support testing for both versions by adding npm alias in your dev depend
 {
   "scripts": {
     "test:2": "vue-demi-switch 2 vue2 && jest",
-    "test:3": "vue-demi-switch 3 && jest"
+    "test:3": "vue-demi-switch 3 && jest",
   },
   "devDependencies": {
     "vue": "^3.0.0",
     "vue2": "npm:vue@2"
-  }
+  },
 }
 ```
 
@@ -176,12 +180,12 @@ or
 {
   "scripts": {
     "test:2": "vue-demi-switch 2 && jest",
-    "test:3": "vue-demi-switch 3 vue3 && jest"
+    "test:3": "vue-demi-switch 3 vue3 && jest",
   },
   "devDependencies": {
     "vue": "^2.6.0",
     "vue3": "npm:vue@3"
-  }
+  },
 }
 ```
 
@@ -198,7 +202,7 @@ See [examples](./examples).
 - [vue-use-stripe](https://github.com/frandiox/vue-use-stripe) - Stripe Elements wrapper for Vue.js
 - [@opd/g2plot-vue](https://github.com/open-data-plan/g2plot-vue) - G2plot for vue
 - [vue-echarts](https://github.com/ecomfe/vue-echarts) - Vue.js component for Apache ECharts.
-- [fluent-vue](https://github.com/Demivan/fluent-vue) - Vue.js integration for [Fluent.js](https://github.com/projectfluent/fluent.js) - JavaScript implementation of [Project Fluent](https://projectfluent.org)
+- [fluent-vue](https://github.com/Demivan/fluent-vue) - Vue.js integration for [Fluent.js](https://github.com/projectfluent/fluent.js) - JavaScript implementation of [Project Fluent](https://projectfluent.org)  
 - [vue-datatable-url-sync](https://github.com/socotecio/vue-datatable-url-sync) - Synchronize datatable options and filters with the url to keep user preference even after refresh or navigation
 - [vue-insta-stories](https://github.com/UnevenSoftware/vue-insta-stories) - Instagram stories in your vue projects.
 - [vue-tiny-validate](https://github.com/FrontLabsOfficial/vue-tiny-validate) - Tiny Vue Validate Composition
@@ -211,7 +215,6 @@ See [examples](./examples).
 - [vue3-sketch-ruler](https://github.com/kakajun/vue3-sketch-ruler) - The zoom operation used for page presentation for Vue 2 and 3( Replace render function with template )
 - [vue-rough-notation](https://github.com/Leecason/vue-rough-notation) - RoughNotation wrapper component for Vue 2 and 3.
 - [vue-codemirror6](https://github.com/logue/vue-codemirror6) - CodeMirror6 component for Vue2 and 3.
-
 > open a PR to add your library ;)
 
 ## Underhood
