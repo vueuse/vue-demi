@@ -57,7 +57,7 @@ let failed = false
     failed = true
   }
 
-  if (!isCjs && !/export\s\{\n\s\sVue,\n\s\sVue2,\n\s\sisVue2/gm.test(mod)) {
+  if (!isCjs && !/export\s*\{\s*Vue,\s*Vue2,\s*isVue2/gm.test(mod)) {
     console.log('ESM:', mod)
     failed = true
   }
