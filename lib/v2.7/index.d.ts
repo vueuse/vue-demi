@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import type { PluginFunction, PluginObject } from 'vue'
 declare const isVue2: boolean
 declare const isVue3: boolean
