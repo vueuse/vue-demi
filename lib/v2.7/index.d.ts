@@ -1,4 +1,6 @@
-import type { PluginFunction, PluginObject } from 'vue'
+import Vue from 'vue'
+import type { PluginFunction, PluginObject, VueConstructor, VNode, VNodeDirective } from 'vue'
+
 declare const isVue2: boolean
 declare const isVue3: boolean
 declare const Vue2: Vue | undefined
@@ -16,8 +18,6 @@ export declare type Plugin = PluginObject<any> | PluginFunction<any>
 export type { VNode } from 'vue'
 export * from 'vue'
 export { V as Vue, Vue2, isVue2, isVue3, version, install }
-
-import Vue, { VueConstructor, VNode, VNodeDirective } from 'vue'
 
 // #region createApp polyfill
 export type DirectiveModifiers = Record<string, boolean>
