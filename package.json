@@ -17,7 +17,8 @@
     ".": {
       "require": "./lib/index.cjs",
       "import": "./lib/index.mjs",
-      "browser": "./lib/index.mjs"
+      "browser": "./lib/index.mjs",
+      "types": "./lib/index.d.ts"
     },
     "./*": "./*"
   },
