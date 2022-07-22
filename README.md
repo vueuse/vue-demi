@@ -195,7 +195,7 @@ See [examples](./examples).
 
 ## Who is using this?
 
-- [VueUse](https://github.com/antfu/vueuse) - Collection of Composition API utils
+- [VueUse](https://github.com/vueuse/vueuse) - Collection of Composition API utils
 - [@vue/apollo-composable](https://github.com/vuejs/vue-apollo/tree/v4/packages/vue-apollo-composable) - Apollo GraphQL functions for Vue Composition API
 - [vuelidate](https://github.com/vuelidate/vuelidate) - Simple, lightweight model-based validation
 - [vue-composition-test-utils](https://github.com/ariesjia/vue-composition-test-utils) - Simple vue composition api unit test utilities
