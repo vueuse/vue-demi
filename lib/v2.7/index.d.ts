@@ -3,14 +3,14 @@ import type { PluginFunction, PluginObject, VueConstructor, VNode, VNodeDirectiv
 
 declare const isVue2: boolean
 declare const isVue3: boolean
-declare const Vue2: Vue | undefined
+declare const Vue2: typeof Vue | undefined
 declare const version: string
-declare const install: (vue?: Vue) => void
+declare const install: (vue?: typeof Vue) => void
 /**
  * @deprecated To avoid bringing in all the tree-shakable modules, this API has been deprecated. Use `Vue2` or named exports instead.
  * Refer to https://github.com/vueuse/vue-demi/issues/41
  */
-declare const V: Vue
+declare const V: typeof Vue
 
 // accept no generic because Vue 3 doesn't accept any
 // https://github.com/vuejs/vue-next/pull/2758/
