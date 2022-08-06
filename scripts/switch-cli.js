@@ -13,6 +13,6 @@ if (version === '2.7') {
   switchVersion(3, vueEntry)
   console.log(`[vue-demi] Switched for Vue 3 (entry: "${vueEntry}")`)
 } else {
-  console.warn(`[vue-demi] expecting version "2" or "3" but got "${version}"`)
+  console.warn(`[vue-demi] expecting version "2" or "2.7" or "3" but got "${version}"`)
   process.exit(1)
 }
