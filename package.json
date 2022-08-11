@@ -1,6 +1,6 @@
 {
   "name": "vue-demi",
-  "version": "0.13.1",
+  "version": "0.13.7",
   "engines": {
     "node": ">=12"
   },
@@ -17,7 +17,8 @@
     ".": {
       "require": "./lib/index.cjs",
       "import": "./lib/index.mjs",
-      "browser": "./lib/index.mjs"
+      "browser": "./lib/index.mjs",
+      "types": "./lib/index.d.ts"
     },
     "./*": "./*"
   },

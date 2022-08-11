@@ -195,7 +195,7 @@ See [examples](./examples).
 
 ## Who is using this?
 
-- [VueUse](https://github.com/antfu/vueuse) - Collection of Composition API utils
+- [VueUse](https://github.com/vueuse/vueuse) - Collection of Composition API utils
 - [@vue/apollo-composable](https://github.com/vuejs/vue-apollo/tree/v4/packages/vue-apollo-composable) - Apollo GraphQL functions for Vue Composition API
 - [vuelidate](https://github.com/vuelidate/vuelidate) - Simple, lightweight model-based validation
 - [vue-composition-test-utils](https://github.com/ariesjia/vue-composition-test-utils) - Simple vue composition api unit test utilities
@@ -215,6 +215,7 @@ See [examples](./examples).
 - [vue3-sketch-ruler](https://github.com/kakajun/vue3-sketch-ruler) - The zoom operation used for page presentation for Vue 2 and 3( Replace render function with template )
 - [vue-rough-notation](https://github.com/Leecason/vue-rough-notation) - RoughNotation wrapper component for Vue 2 and 3.
 - [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - A vue3.x image lazyload plugin.
+- [vue-codemirror6](https://github.com/logue/vue-codemirror6) - CodeMirror6 component for Vue2 and 3.
 > open a PR to add your library ;)
 
 ## Underhood
