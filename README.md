@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/vueuse/vue-demi/blob/master/assets/banner.png?raw=true" width="600"/>
+<img src="https://github.com/vueuse/vue-demi/blob/main/assets/banner.png?raw=true" width="600"/>
 <br>
 <a href='https://www.npmjs.com/package/vue-demi'><img src='https://img.shields.io/npm/v/vue-demi?color=42b883' alt='npm'></a>
 </p>
@@ -13,6 +13,12 @@
 
 <br>
 
+## Strategies
+
+- `<=2.6`: exports from `vue` + `@vue/composition-api` with plugin auto installing.
+- `2.7`: exports from `vue` (Composition API is built-in in Vue 2.7).
+- `>=3.0`: exports from `vue`, with polyfill of Vue 2's `set` and `del` API.
+
 ## Usage
 
 Install this as your plugin's dependency:
@@ -21,6 +27,8 @@ Install this as your plugin's dependency:
 npm i vue-demi
 # or
 yarn add vue-demi
+# or 
+pnpm i vue-demi
 ```
 
 Add `vue` and `@vue/composition-api` to your plugin's peer dependencies to specify what versions you support.
@@ -187,7 +195,7 @@ See [examples](./examples).
 
 ## Who is using this?
 
-- [VueUse](https://github.com/antfu/vueuse) - Collection of Composition API utils
+- [VueUse](https://github.com/vueuse/vueuse) - Collection of Composition API utils
 - [@vue/apollo-composable](https://github.com/vuejs/vue-apollo/tree/v4/packages/vue-apollo-composable) - Apollo GraphQL functions for Vue Composition API
 - [vuelidate](https://github.com/vuelidate/vuelidate) - Simple, lightweight model-based validation
 - [vue-composition-test-utils](https://github.com/ariesjia/vue-composition-test-utils) - Simple vue composition api unit test utilities
@@ -207,6 +215,8 @@ See [examples](./examples).
 - [vue3-sketch-ruler](https://github.com/kakajun/vue3-sketch-ruler) - The zoom operation used for page presentation for Vue 2 and 3( Replace render function with template )
 - [vue-rough-notation](https://github.com/Leecason/vue-rough-notation) - RoughNotation wrapper component for Vue 2 and 3.
 - [vue-request](https://github.com/AttoJS/vue-request) - Vue composition API for data fetching, supports SWR, polling, error retry, cache request, pagination, etc.
+- [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - A vue3.x image lazyload plugin.
+- [vue-codemirror6](https://github.com/logue/vue-codemirror6) - CodeMirror6 component for Vue2 and 3.
 > open a PR to add your library ;)
 
 ## Underhood
