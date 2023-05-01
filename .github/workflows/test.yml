@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm -v
-      - run: node .github/test.js "npm" ${{ matrix.vue }} ${{matrix.type}}
+      - run: node .github/test.js "npm" ${{ matrix.vue }}
   
   yarn:
     strategy:
@@ -52,7 +52,7 @@ jobs:
   pnpm:
     strategy:
       matrix:
-        node: [14.x, 16.x]
+        node: [16.x]
         os: [ubuntu-latest]
         vue: [2.6, 2.7, 3]
         
@@ -67,4 +67,4 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm i -g pnpm
       - run: pnpm -v
-      - run: node .github/test.js "pnpm" ${{ matrix.vue }} ${{matrix.type}}
+      - run: node .github/test.js "pnpm" ${{ matrix.vue }}
