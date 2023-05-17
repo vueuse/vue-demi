@@ -1,6 +1,6 @@
 {
   "name": "vue-demi",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "engines": {
     "node": ">=12"
   },
