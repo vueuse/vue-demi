@@ -217,6 +217,7 @@ See [examples](./examples).
 - [vue-request](https://github.com/AttoJS/vue-request) - Vue composition API for data fetching, supports SWR, polling, error retry, cache request, pagination, etc.
 - [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - A vue3.x image lazyload plugin.
 - [vue-codemirror6](https://github.com/logue/vue-codemirror6) - CodeMirror6 component for Vue2 and 3.
+- [sortablejs-vue3](https://github.com/MaxLeiter/sortablejs-vue3) - A lightweight wrapper around Sortable.js for Vue 2 and 3. 
 > open a PR to add your library ;)
 
 ## Underhood
