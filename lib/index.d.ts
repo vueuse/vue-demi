@@ -20,3 +20,5 @@ export {
   isVue3,
   install,
 }
+
+export function hasInjectionContext(): boolean
