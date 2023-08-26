@@ -30,4 +30,4 @@ export {
   install,
 }
 
-export function hasInjectionContext(): boolean
+export declare function hasInjectionContext(): boolean
