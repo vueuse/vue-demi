@@ -29,3 +29,5 @@ export {
   version,
   install,
 }
+
+export declare function hasInjectionContext(): boolean

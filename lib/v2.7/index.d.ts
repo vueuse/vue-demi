@@ -34,3 +34,5 @@ export interface App<T = any> {
 }
 export declare function createApp(rootComponent: any, rootProps?: any): App
 // #endregion
+
+export declare function hasInjectionContext(): boolean
