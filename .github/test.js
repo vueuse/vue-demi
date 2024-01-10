@@ -22,7 +22,7 @@ function installDeps() {
 
   let installCmd = agent === 'yarn' ? `${agent} add` : `${agent} i`
 
-  const packages = isVue27 ? 'vue@v2-alpha' : isVue2 ? `vue@2.6 @vue/composition-api` : 'vue@3'
+  const packages = isVue27 ? 'vue@2.7' : isVue2 ? `vue@2.6 @vue/composition-api` : 'vue@3'
   execSync(`${installCmd} ${packages}`, { cwd: DIR, stdio: 'inherit' })
   execSync(`${installCmd} ${agent === 'yarn' ? `file:${tarball}` : tarball} --force`, { cwd: DIR, stdio: 'inherit' })
 }
