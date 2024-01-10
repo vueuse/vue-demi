@@ -33,7 +33,7 @@ jobs:
         node: [14.x, 16.x]
         os: [ubuntu-latest]
         vue: [2.6, 2.7, 3]
-        yarn: [latest, berry]
+        yarn: [latest, 3.x]
         type: [commonjs, module]
         
     runs-on: ${{ matrix.os }}
