@@ -217,6 +217,7 @@ See [examples](./examples).
 - [vue-request](https://github.com/AttoJS/vue-request) - Vue composition API for data fetching, supports SWR, polling, error retry, cache request, pagination, etc.
 - [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - A vue3.x image lazyload plugin.
 - [vue-codemirror6](https://github.com/logue/vue-codemirror6) - CodeMirror6 component for Vue2 and 3.
+- [vue3-dnd](https://github.com/hcg1023/vue3-dnd) - React DnD in Composition API implementation, Use the Composition API for sortable and free draggable.
 > open a PR to add your library ;)
 
 ## Underhood
