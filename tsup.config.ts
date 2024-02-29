@@ -23,6 +23,10 @@ export default defineConfig(async (options) => {
     esbuildPlugins: [
       replace.esbuild([
         {
+          from: '@vue/composition-api',
+          to: '@vue/composition-api/dist/vue-composition-api.mjs'
+        },
+        {
           from: /\/\*\*VCA-EXPORTS\*\*\/[\s\S]+\/\*\*VCA-EXPORTS\*\*\//m,
           to: VCA_EXPORTS
         },
