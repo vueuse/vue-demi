@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const dir = path.resolve(__dirname, '..', 'lib')
+const dir = path.resolve(__dirname, '..', 'dist')
 
 function loadModule(name) {
   try {

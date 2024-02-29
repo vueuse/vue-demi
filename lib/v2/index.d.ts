@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import type { PluginFunction, PluginObject } from 'vue'
+import type { PluginFunction, PluginObject } from 'vue-v2.0'
 declare const isVue2: boolean
 declare const isVue3: boolean
 declare const Vue2: typeof Vue | undefined

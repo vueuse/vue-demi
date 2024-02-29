@@ -8,17 +8,17 @@
   "funding": "https://github.com/sponsors/antfu",
   "license": "MIT",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
-  "main": "lib/index.cjs",
-  "jsdelivr": "lib/index.iife.js",
-  "unpkg": "lib/index.iife.js",
-  "module": "lib/index.mjs",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "jsdelivr": "dist/index.global.js",
+  "unpkg": "dist/index.global.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "require": "./lib/index.cjs",
-      "import": "./lib/index.mjs",
-      "browser": "./lib/index.mjs"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "browser": "./dist/index.mjs"
     },
     "./*": "./*"
   },
@@ -27,11 +27,13 @@
     "vue-demi-switch": "bin/vue-demi-switch.js"
   },
   "files": [
-    "lib",
+    "dist",
     "bin",
     "scripts"
   ],
   "scripts": {
+    "dev": "tsup-node --watch",
+    "build": "rimraf dist && tsup-node",
     "postinstall": "node -e \"try{require('./scripts/postinstall.js')}catch(e){}\"",
     "release": "npx bumpp --tag --commit --push && npm publish"
   },
@@ -43,5 +45,21 @@
     "@vue/composition-api": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.4",
+    "@vue/composition-api": "^1.7.2",
+    "citty": "^0.1.6",
+    "esbuild-plugin-replace": "^1.4.0",
+    "eslint": "^8.57.0",
+    "jiti": "^1.21.0",
+    "mlly": "^1.6.1",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "unimport": "^3.7.1",
+    "unplugin-replace": "link:..\\unplugin-replace",
+    "vue-v2.0": "npm:vue@2.6.14",
+    "vue-v2.7": "npm:vue@2.7.15",
+    "vue-v3": "npm:vue@latest"
   }
 }
