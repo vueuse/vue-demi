@@ -6,8 +6,24 @@ import replace from 'unplugin-replace'
 const defaults = {
   entry: ['src/index.ts', 'src/v2/index.ts', 'src/v2.7/index.ts', 'src/v3/index.ts'],
   dts: true,
-  splitting: false
+  splitting: false,
+  minify: false
 }
+
+const resolveVueAlias = [
+  {
+    from: /vue-v3/g,
+    to: 'vue'
+  },
+  {
+    from: /vue-v2.7/g,
+    to: 'vue'
+  },
+  {
+    from: /vue-v2.0/g,
+    to: 'vue'
+  }
+]
 
 const resolveVCAExports = async () => {
   const modules = await resolveModuleExportNames('@vue/composition-api')
@@ -18,33 +34,15 @@ export { ${exports.join(', ')} } from '@vue/composition-api/dist/vue-composition
 /**VCA-EXPORTS**/`
 }
 
-const CJS_IIFE = (options: Options): Options => defu({
+const CJS_IIFE = (): Options => defu({
   format: ['cjs', 'iife'],
-  minify: !options.watch,
-  esbuildPlugins: [
-    replace.esbuild([
-      {
-        from: 'vue-v3',
-        to: 'vue'
-      },
-      {
-        from: 'vue-v2.7',
-        to: 'vue'
-      },
-      {
-        from: 'vue-v2.0',
-        to: 'vue'
-      }
-    ])
-  ]
+  esbuildPlugins: [replace.esbuild(resolveVueAlias)]
 }, defaults)
 
-const ESM = (options: Options, VCA_EXPORTS: string): Options => defu({
-  entry: ['src/index.ts', 'src/v2/index.ts', 'src/v2.7/index.ts', 'src/v3/index.ts'],
+const ESM = (VCA_EXPORTS: string): Options => defu({
   format: ['esm'],
   dts: true,
   splitting: false,
-  minify: !options.watch,
   esbuildPlugins: [
     replace.esbuild([
       {
@@ -55,27 +53,16 @@ const ESM = (options: Options, VCA_EXPORTS: string): Options => defu({
         from: /\/\*\*VCA-EXPORTS\*\*\/[\s\S]+\/\*\*VCA-EXPORTS\*\*\//m,
         to: VCA_EXPORTS
       },
-      {
-        from: 'vue-v3',
-        to: 'vue'
-      },
-      {
-        from: 'vue-v2.7',
-        to: 'vue'
-      },
-      {
-        from: 'vue-v2.0',
-        to: 'vue'
-      }
+      ...resolveVueAlias
     ])
   ]
 }, defaults )
 
-export default defineConfig(async (options) => {
+export default defineConfig(async () => {
   const VCA_EXPORTS = await resolveVCAExports()
 
   return [
-    CJS_IIFE(options),
-    ESM(options, VCA_EXPORTS)
+    CJS_IIFE(),
+    ESM(VCA_EXPORTS)
   ]
 })
