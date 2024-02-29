@@ -46,7 +46,7 @@ const ESM = (VCA_EXPORTS: string): Options => defu({
   esbuildPlugins: [
     replace.esbuild([
       {
-        from: '@vue/composition-api',
+        from: /@vue\/composition-api/g,
         to: '@vue/composition-api/dist/vue-composition-api.mjs'
       },
       {
