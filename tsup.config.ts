@@ -7,7 +7,7 @@ const resolveVCAExports = async () => {
   const excludes = ['version', 'warn']
   const exports = modules.filter((item) => !excludes.includes(item))
   return `/**VCA-EXPORTS**/
-export { ${exports.join(', ')} } from '@vue/composition-api/dist/vue-composition-api.mjs'
+export { ${exports.join(', ')} } from '@vue/composition-api'
 /**VCA-EXPORTS**/`
 }
 
@@ -22,10 +22,6 @@ export default defineConfig(async (options) => {
     minify: !options.watch,
     esbuildPlugins: [
       replace.esbuild([
-        {
-          from: '@vue/composition-api',
-          to: '@vue/composition-api/dist/vue-composition-api.mjs'
-        },
         {
           from: /\/\*\*VCA-EXPORTS\*\*\/[\s\S]+\/\*\*VCA-EXPORTS\*\*\//m,
           to: VCA_EXPORTS
