@@ -56,7 +56,6 @@
     "mlly": "^1.6.1",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
-    "unimport": "^3.7.1",
     "unplugin-replace": "link:..\\unplugin-replace",
     "vue-v2.0": "npm:vue@2.6.14",
     "vue-v2.7": "npm:vue@2.7.15",
