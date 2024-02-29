@@ -52,7 +52,7 @@ const mod = fs.readFileSync(resolve(DIR, `node_modules/vue-demi/dist/${indexFile
 let failed = false
 
 ;(function codeCheck() {
-  if (isCjs && !mod.includes(`exports.isVue2 = ${isVue2}`)) {
+  if (isCjs && !mod.includes(`isVue2 = ${isVue2}`)) {
     console.log('CJS:', mod)
     failed = true
   }
