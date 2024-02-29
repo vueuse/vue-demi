@@ -50,6 +50,7 @@
     "@antfu/eslint-config": "^2.6.4",
     "@vue/composition-api": "^1.7.2",
     "citty": "^0.1.6",
+    "defu": "^6.1.4",
     "esbuild-plugin-replace": "^1.4.0",
     "eslint": "^8.57.0",
     "jiti": "^1.21.0",
