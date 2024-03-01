@@ -37,6 +37,9 @@ devDependencies:
   tsup:
     specifier: ^8.0.2
     version: 8.0.2(typescript@5.3.3)
+  typescript:
+    specifier: ^5.3.3
+    version: 5.3.3
   unplugin-replace:
     specifier: ^0.1.0
     version: 0.1.1

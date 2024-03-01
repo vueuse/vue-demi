@@ -57,6 +57,7 @@
     "mlly": "^1.6.1",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
+    "typescript": "^5.3.3",
     "unplugin-replace": "^0.1.0",
     "vue-v2.0": "npm:vue@2.6.14",
     "vue-v2.7": "npm:vue@2.7.15",
