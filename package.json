@@ -9,8 +9,8 @@
   "license": "MIT",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "main": "dist/index.js",
-  "jsdelivr": "dist/index.global.js",
-  "unpkg": "dist/index.global.js",
+  "jsdelivr": "dist/iife.global.js",
+  "unpkg": "dist/iife.global.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
@@ -32,8 +32,9 @@
     "scripts"
   ],
   "scripts": {
-    "dev": "tsup-node --watch",
-    "build": "rimraf dist && tsup-node",
+    "dev": "tsup --watch",
+    "build": "rimraf dist && tsup",
+    "lint": "eslint .",
     "postinstall": "node -e \"try{require('./scripts/postinstall.js')}catch(e){}\"",
     "release": "npx bumpp --tag --commit --push && npm publish"
   },

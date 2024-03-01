@@ -34,8 +34,8 @@ export { ${exports.join(', ')} } from '@vue/composition-api/dist/vue-composition
 /**VCA-EXPORTS**/`
 }
 
-const CJS_IIFE = (): Options => defu({
-  format: ['cjs', 'iife'],
+const CJS = (): Options => defu({
+  format: ['cjs'],
   esbuildPlugins: [replace.esbuild(resolveVueAlias)]
 }, defaults)
 
@@ -56,13 +56,24 @@ const ESM = (VCA_EXPORTS: string): Options => defu({
       ...resolveVueAlias
     ])
   ]
-}, defaults )
+}, defaults)
+
+const IIFE = (): Options => ({
+  entry: ['src/iife.ts'],
+  format: ['iife'],
+  dts: false,
+  splitting: false,
+  minify: false,
+  clean: true,
+  external: ['vue']
+})
 
 export default defineConfig(async () => {
   const VCA_EXPORTS = await resolveVCAExports()
 
   return [
-    CJS_IIFE(),
-    ESM(VCA_EXPORTS)
+    CJS(),
+    ESM(VCA_EXPORTS),
+    IIFE()
   ]
 })
