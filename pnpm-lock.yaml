@@ -14,7 +14,7 @@ devDependencies:
     specifier: ^2.6.4
     version: 2.6.4(@vue/compiler-sfc@3.4.21)(eslint@8.57.0)(typescript@5.3.3)
   '@vue/composition-api':
-    specifier: ^1.7.2
+    specifier: latest
     version: 1.7.2(vue@3.4.21)
   citty:
     specifier: ^0.1.6
@@ -42,7 +42,7 @@ devDependencies:
     version: 8.0.2(typescript@5.3.3)
   unplugin-replace:
     specifier: ^0.1.0
-    version: 0.1.0
+    version: 0.1.1
   vue-v2.0:
     specifier: npm:vue@2.6.14
     version: /vue@2.6.14
@@ -3229,8 +3229,8 @@ packages:
       '@types/unist': 2.0.10
     dev: true
 
-  /unplugin-replace@0.1.0:
-    resolution: {integrity: sha512-UQh4gOhTr55QMfy/wOQSatoWteH5MmIbtFvcKKU+9aQVxMrivmi0C1WVdn0y1JC5gvnczAQ2FZ8mHvotczyvXQ==}
+  /unplugin-replace@0.1.1:
+    resolution: {integrity: sha512-oRFY3MqW0u56QVa/iWWFMx6x0GlyHObA3wDiV4SJMEnNQotUz762SaSwIxIXNrF7G2aycT+4Wc1sAwJTjnhNbA==}
     dependencies:
       '@rollup/pluginutils': 5.1.0
       magic-string: 0.30.7

@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@vue/composition-api": "^1.7.2",
+    "@vue/composition-api": "latest",
     "citty": "^0.1.6",
     "defu": "^6.1.4",
     "esbuild-plugin-replace": "^1.4.0",

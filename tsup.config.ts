@@ -12,15 +12,15 @@ const defaults = {
 
 const resolveVueAlias = [
   {
-    from: /vue-v3/g,
+    from: 'vue-v3',
     to: 'vue'
   },
   {
-    from: /vue-v2.7/g,
+    from: 'vue-v2.7',
     to: 'vue'
   },
   {
-    from: /vue-v2.0/g,
+    from: 'vue-v2.0',
     to: 'vue'
   }
 ]
