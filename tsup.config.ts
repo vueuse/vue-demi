@@ -1,7 +1,7 @@
 import { defineConfig, type Options } from 'tsup'
 import { resolveModuleExportNames } from "mlly"
 import { defu } from 'defu'
-import replace from 'unplugin-replace'
+import modify from 'unplugin-modify'
 
 const defaults = {
   entry: ['src/index.ts', 'src/v2/index.ts', 'src/v2.7/index.ts', 'src/v3/index.ts'],
@@ -36,7 +36,7 @@ export { ${exports.join(', ')} } from '@vue/composition-api/dist/vue-composition
 
 const CJS = (): Options => defu({
   format: ['cjs'],
-  esbuildPlugins: [replace.esbuild(resolveVueAlias)]
+  esbuildPlugins: [modify.esbuild(resolveVueAlias)]
 }, defaults)
 
 const ESM = (VCA_EXPORTS: string): Options => defu({
@@ -44,7 +44,7 @@ const ESM = (VCA_EXPORTS: string): Options => defu({
   dts: true,
   splitting: false,
   esbuildPlugins: [
-    replace.esbuild([
+    modify.esbuild([
       {
         from: /@vue\/composition-api/g,
         to: '@vue/composition-api/dist/vue-composition-api.mjs'

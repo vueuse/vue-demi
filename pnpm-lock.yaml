@@ -40,9 +40,9 @@ devDependencies:
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
-  unplugin-replace:
+  unplugin-modify:
     specifier: ^0.1.0
-    version: 0.1.1
+    version: 0.1.0
   vue-v2.0:
     specifier: npm:vue@2.6.14
     version: /vue@2.6.14
@@ -3212,8 +3212,8 @@ packages:
       '@types/unist': 2.0.10
     dev: true
 
-  /unplugin-replace@0.1.1:
-    resolution: {integrity: sha512-oRFY3MqW0u56QVa/iWWFMx6x0GlyHObA3wDiV4SJMEnNQotUz762SaSwIxIXNrF7G2aycT+4Wc1sAwJTjnhNbA==}
+  /unplugin-modify@0.1.0:
+    resolution: {integrity: sha512-LpPsI3z770CbmTY+9YEWooYDL4WTkyqFEYtHUOKuIPSbcvrXTZz6LJiAzRgE5z+w0PjRzVkuLmsz1X4lR6N+Bg==}
     dependencies:
       '@rollup/pluginutils': 5.1.0
       magic-string: 0.30.7
