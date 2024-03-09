@@ -217,6 +217,7 @@ See [examples](./examples).
 - [vue-request](https://github.com/AttoJS/vue-request) - Vue composition API for data fetching, supports SWR, polling, error retry, cache request, pagination, etc.
 - [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - A vue3.x image lazyload plugin.
 - [vue-codemirror6](https://github.com/logue/vue-codemirror6) - CodeMirror6 component for Vue2 and 3.
+- [@tanstack/vue-query](https://github.com/TanStack/query) - TanStack Query for Vue.
 > open a PR to add your library ;)
 
 ## Underhood
