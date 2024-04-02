@@ -15,5 +15,5 @@ else if (Vue.version.startsWith('3.')) {
   switchVersion(3)
 }
 else {
-  console.warn(`[vue-demi] Vue version v${Vue.version} is not suppported.`)
+  console.warn(`[vue-demi] Vue version v${Vue.version} is not supported.`)
 }
