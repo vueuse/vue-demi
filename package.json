@@ -12,6 +12,7 @@
   "jsdelivr": "lib/index.iife.js",
   "unpkg": "lib/index.iife.js",
   "module": "lib/index.mjs",
+  "sideEffects": false,
   "types": "lib/index.d.ts",
   "exports": {
     ".": {
