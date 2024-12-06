@@ -11,6 +11,9 @@
 
 <br>
 
+> [!CAUTION]
+> `vue-demi` should not be used for new projects and will be deprecated in the future.
+
 <br>
 
 ## Strategies
