@@ -13,6 +13,7 @@ export function set<T>(target: any, key: any, val: T): T
 export function del(target: any, key: any): void
 
 export * from 'vue'
+export type { WatchOptions } from 'vue/types/v3-generated'
 export {
   V as Vue,
   Vue2,
