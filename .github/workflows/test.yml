@@ -14,7 +14,7 @@ jobs:
         os: [ubuntu-latest]
         vue: [2.6, 2.7, 3]
       fail-fast: false
-        
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm -v
       - run: node .github/test.js "npm" ${{ matrix.vue }}
-  
+
   yarn:
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
         vue: [2.6, 2.7, 3]
         yarn: [latest]
         type: [commonjs, module]
-        
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -48,14 +48,14 @@ jobs:
       - run: yarn set version ${{ matrix.yarn }}
       - run: yarn --version
       - run: node .github/test.js "yarn" ${{ matrix.vue }} ${{matrix.type}}
-  
+
   pnpm:
     strategy:
       matrix:
         node: [16.x]
         os: [ubuntu-latest]
         vue: [2.6, 2.7, 3]
-        
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -65,6 +65,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - run: npm i -g pnpm
+
+      - run: npm i -g pnpm@8
       - run: pnpm -v
       - run: node .github/test.js "pnpm" ${{ matrix.vue }}
