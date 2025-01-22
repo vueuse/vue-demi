@@ -1,5 +1,16 @@
 import Vue from 'vue'
-import type { PluginFunction, PluginObject, VueConstructor, Directive, InjectionKey, Component } from 'vue'
+import type {
+  PluginFunction,
+  PluginObject,
+  VueConstructor,
+  Directive,
+  InjectionKey,
+  Component,
+  Ref,
+  ShallowRef,
+  WritableComputedRef,
+  ComputedRef,
+} from 'vue'
 
 declare const isVue2: boolean
 declare const isVue3: boolean
@@ -36,3 +47,29 @@ export declare function createApp(rootComponent: any, rootProps?: any): App
 // #endregion
 
 export declare function hasInjectionContext(): boolean
+
+export type MaybeRef<T = any> =
+  | T
+  | Ref<T>
+  | ShallowRef<T>
+  | WritableComputedRef<T>
+
+export type MaybeRefOrGetter<T = any> = MaybeRef<T> | ComputedRef<T> | (() => T)
+
+/**
+ * Normalizes values / refs / getters to values.
+ * This is similar to {@link unref()}, except that it also normalizes getters.
+ * If the argument is a getter, it will be invoked and its return value will
+ * be returned.
+ *
+ * @example
+ * ```js
+ * toValue(1) // 1
+ * toValue(ref(1)) // 1
+ * toValue(() => 1) // 1
+ * ```
+ *
+ * @param source - A getter, an existing ref, or a non-function value.
+ * @see {@link https://vuejs.org/api/reactivity-utilities.html#tovalue}
+ */
+export declare function toValue<T>(source: MaybeRefOrGetter<T>): T
